@@ -1,0 +1,17 @@
+.boardgame, .game {
+	border: 1px solid black;
+	display: inline-block;
+};
+
+.boardgame {
+	width: 80%;
+	height: 400px;
+	margin-bottom: 20px;
+
+}
+
+.game {
+	width: 50%;
+	height: 300px;
+
+}
