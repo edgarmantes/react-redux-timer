@@ -16,7 +16,8 @@ var Call = require('./components/call');
 var SignIn = require('./components/signin');
 var SignUp = require('./components/signup');
 var Home = require('./components/home');
-var CardsContainer = require('./components/cards-container')
+var CardsContainer = require('./components/cards-container');
+var CardPage = require('./components/card-page');
 
 var routes = (
 	<Provider store={store}>
@@ -26,6 +27,7 @@ var routes = (
 				<Route path="signup" component={SignUp} />
 				<Route path="home" component={Home}>
 					<IndexRoute component={CardsContainer} />
+					<Route path=":cardIndex" component={CardPage} />
 				</Route>
 		</Router>
 	</Provider>

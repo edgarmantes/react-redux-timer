@@ -59,16 +59,25 @@ header {
 	text-align: center;
 }
 
-.card {
-	border: 1px solid black;
+.innercard {
 	display: inline-block;
-	width: 300px;
-	height: 200px;
+	padding: 10px;
 }
 
 .card-descript {
-	display: inline-block;
-	width: 250px;
-	height: 150px;
-	padding: 24px;
+	height: 200px;	
+	padding : 24px;
+	border: 1px solid black;
+}
+
+.info {
+	margin: 5px 0 5px 0;
+}
+
+/*Call to Action Page styling*/
+
+
+.enter-btns {
+	text-align: center; 
+	border: 1px, solid, black;
 }

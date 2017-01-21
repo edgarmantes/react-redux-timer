@@ -3,19 +3,21 @@ var connect = require('react-redux').connect;
 
 var actions = require('../actions/index');
 
-var CardsContainer = React.createClass({
-	componentDidMount : function(){
-		this.props.dispatch(actions.fetchCards());
+var Card = require('./card');
 
-	},
+var CardsContainer = React.createClass({
+	// componentDidMount : function(){
+
+	// },
 
 	render: function(props){
-		var cards = this.props.cards
-		console.log(cards)
-
+		var cardsArray = this.props.cards.map(function(object, index){
+			return <Card key={index} cardname={object.cardname} time={object.time} description={object.descripion} index={index} />
+		})
 		return (
-			<div className="cards-list">
-				
+
+			<div className="cards-list row">
+				{cardsArray}
 			</div>
 		)
 	}
