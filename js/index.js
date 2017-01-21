@@ -22,22 +22,29 @@ var CardPage = require('./components/card-page');
 var routes = (
 	<Provider store={store}>
 		<Router history={hashHistory}>
-			<Route path="/" component={Call} />
-				<Route path="signin" component={SignIn} />
-				<Route path="signup" component={SignUp} />
-				<Route path="home" component={Home}>
-					<IndexRoute component={CardsContainer} />
-					<Route path=":cardIndex" component={CardPage} />
-				</Route>
+			<Route path="/" component={Home}>
+				<IndexRoute component={CardsContainer} />
+				<Route path=":cardIndex" component={CardPage} />
+			</Route>
 		</Router>
 	</Provider>
 )
 
-				//	<IndexRoute component={ListContainer} />
-				//	<Route path=":cardId" component={CardContainer} />
 
 document.addEventListener('DOMContentLoaded', function() {
     ReactDOM.render(
 		routes, 
     	document.getElementById('app'));
 });
+
+	// <Provider store={store}>
+	// 	<Router history={hashHistory}>
+	// 		<Route path="/" component={Call} />
+	// 			<Route path="signin" component={SignIn} />
+	// 			<Route path="signup" component={SignUp} />
+	// 			<Route path="home" component={Home}>
+	// 				<IndexRoute component={CardsContainer} />
+	// 				<Route path=":cardIndex" component={CardPage} />
+	// 			</Route>
+	// 	</Router>
+	// </Provider>

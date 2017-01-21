@@ -7,7 +7,7 @@ var Card = function(props){
 	return (
 		<div className="card">
 			<div className="innercard col-4">
-				<Link to={ '/home/' + props.index } >
+				<Link to={ '/' + props.index } >  
 					<div className="card-descript">
 						<div className="info"><strong>Name:</strong>{props.cardname}</div>
 						<div className="info"><strong>Accum. Time:</strong> {props.time}</div>

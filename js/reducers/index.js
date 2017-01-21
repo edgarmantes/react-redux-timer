@@ -12,7 +12,7 @@ var timerReducer = function(state, action){
 	state = state || initialCardState;
 
 	if ( action.type === actions.GET_CARDS ) {
-		console.log(state.cards)
+
 		return state
 	} else if ( action.type === actions.CREATE_NEW_CARD ){
 		var newCard = {
@@ -28,9 +28,9 @@ var timerReducer = function(state, action){
 		var object = state.cards[action.cardIndex];
 		var updateObject = update(object, { time: {$apply: function(){return action.time} }})
 		state.cards.splice(action.cardIndex, 1, updateObject)
-		console.log(state.cards)
+
 		return Object.assign({}, state, {cards: state.cards})
-}
+	}
 
 	return state;
 };

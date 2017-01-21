@@ -29,10 +29,10 @@ var Home = React.createClass({
 					<h4>New Card Form</h4>
 					<form className="newform">
 						<label>New Card Name</label>
-						<input className="newcardname" placeholder="New Card Name" />
+						<input className="newcardname" placeholder="New Card Name" required></input>
 						<label>Description</label>			
 						<textarea rows="10" cols="28" className="newcarddescription" placeholder=" new card description" />
-						<button className="create-card" onClick={this.createCard}>Create Card</button>
+						<input type="submit" className="create-card" onClick={this.createCard} value="Create New Card" />
 					</form>
 					<Link to="signin"><button className="out-btn">Sign Out</button></Link>
 					<Link to="home"><button className="home-btn">Home</button></Link>
