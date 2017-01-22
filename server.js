@@ -4,7 +4,7 @@ var app = express();
 
 app.use(express.static('public'));
 
-app.get('/home', function(request, response) {
+app.get('/', function(request, response) {
 
     console.log('serverTest')
 	response.header ('Access-Control-Allow-Origin',	'*');
