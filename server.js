@@ -2,9 +2,7 @@ var express = require('express');
 
 var app = express();
 
-process.env.PWD = process.cwd()
-
-app.use(express.static(process.env.PWD + 'public'));
+app.use(express.static('public'));
 
 app.get('/', function(request, response) {
 
