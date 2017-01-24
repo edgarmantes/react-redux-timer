@@ -10,7 +10,7 @@ var CardsContainer = React.createClass({
 
 	render: function(props){
 		var cardsArray = this.props.cards.map(function(object, index){
-			return <Card key={index} cardname={object.cardname} time={object.time} description={object.descripion} index={index} />
+			return <Card key={index} cardname={object.cardname} time={object.time} description={object.description} index={index} />
 		})
 		return (
 

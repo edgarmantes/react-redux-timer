@@ -7,12 +7,13 @@ var Card = require('./card')
 var actions = require('../actions/index');
 
 var Home = React.createClass({
+
 	createCard: function(event){
 		event.preventDefault();
 		var cardname = document.getElementsByClassName('newcardname')[0].value;
-		var carddescription = document.getElementsByClassName('newcarddescription')[0].value;
+		var carddescription = document.getElementById('newcarddescription').value;
 		this.props.dispatch(actions.createNewCard(cardname, carddescription));
-
+		console.log(carddescription)
 	},	
 		
 	render: function(props){
@@ -31,7 +32,7 @@ var Home = React.createClass({
 						<label>New Card Name</label><br/>
 						<input className="newcardname" placeholder="New Card Name" required></input><br/>
 						<label>Description</label><br/>		
-						<textarea rows="10" cols="28" className="newcarddescription" placeholder=" new card description" />
+						<textarea rows="10" cols="28" id="newcarddescription" placeholder=" new card description" />
 						<input type="submit" className="create-card btn" onClick={this.createCard} value="Create New Card" />
 					</form>
 					<Link to="signin"><button className="out-btn btn">Sign Out</button></Link>

@@ -83,9 +83,9 @@ var CardPage = React.createClass({
 		return (
 			<div className="pageContainer row">
 				<div className={"page col-12 " + this.props.params.cardIndex} >
-					<div id="cardName"><strong className="cPage">Card Name: </strong>{name}</div>
-					<strong className="cPage">Accummulated Time: </strong><div id="time">{time}</div>
-					<div id="descript"><strong className="cPage">Description:</strong>{description}</div>
+					<div id="cardName"><strong className="cPage">Card Name:  </strong>{name}</div>
+					<strong className="cPage">Accummulated Time:  </strong><div id="time">{time}</div>
+					<div id="descript"><strong className="cPage">Description:  </strong>{description}</div>
 					<button id="control" onClick={this.changeState}>Start</button>
 				</div>
 				<button className="facebook-btn but-card"><img className="fb" src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/facebook_circle-128.png" />Share</button><br/>				

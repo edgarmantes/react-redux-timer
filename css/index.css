@@ -60,7 +60,7 @@ nav li:last-child a { border-bottom: none; }
 	border-radius: 5px;
 	position: fixed;
 	top: 3px;
-	left: 19px;
+	left: 5px;
 
 
 }
@@ -103,7 +103,7 @@ nav li:last-child a { border-bottom: none; }
 .timetracker {
 	display: inline-block;
 	max-width: 80%;
-	font-size: 6vh;
+	font-size: 200%;
 	font-family: 'Lobster', cursive;
 }
 
@@ -172,21 +172,28 @@ label {
 
 strong {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
-
 }
 
 #time {
 	font-size: 430%;
 	text-align: center;
 	color: #ff0000;
+	font-size: 9vh;
+}
+
+#descript {
+	font-size: 30px;
+	word-wrap: break-word;
 }
 
 .cPage {
-	font-size: 200%;
+	font-size: 4vh;
+
 }
 
 #cardName {
 	margin: 20px 0;
+	font-size: 30px;
 }
 
 .fb {
@@ -212,4 +219,8 @@ strong {
 	height: 53px;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-size: 4vh;
+}
+
+.delete-btn {
+	background-color: red;
 }
