@@ -14,6 +14,7 @@ var createNewCard = function(cardname, description){
 		type: CREATE_NEW_CARD,
 		cardname: cardname,
 		description: description
+
 	}
 };
 
@@ -23,6 +24,14 @@ var saveTime = function(time, cardIndex){
 		type: SAVE_TIME,
 		time: time,
 		cardIndex: cardIndex
+	}
+};
+
+var DELETE_CARD = 'DELETE_CARD';
+var deleteCard = function(key){
+	return {
+		type: 'DELETE_CARD',
+		key: key
 	}
 };
 
@@ -123,8 +132,8 @@ exports.CREATE_NEW_CARD = CREATE_NEW_CARD;
 exports.createNewCard = createNewCard;
 exports.SAVE_TIME = SAVE_TIME;
 exports.saveTime = saveTime;
-// exports.NEW_GAME = NEW_GAME;
-// exports.newGame = newGame;
+exports.DELETE_CARD = DELETE_CARD;
+exports.deleteCard = deleteCard;
 
 // exports.FETCH_DESCRIPTION_SUCCESS = FETCH_DESCRIPTION_SUCCESS;
 // exports.fetchDescriptionSuccess = fetchDescriptionSuccess;

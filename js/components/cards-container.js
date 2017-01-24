@@ -6,9 +6,7 @@ var actions = require('../actions/index');
 var Card = require('./card');
 
 var CardsContainer = React.createClass({
-	// componentDidMount : function(){
 
-	// },
 
 	render: function(props){
 		var cardsArray = this.props.cards.map(function(object, index){

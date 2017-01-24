@@ -2,9 +2,9 @@
   "name": "thinkful-react-starter",
   "version": "0.0.1",
   "description": "A React template",
-  "main": "server.js",
+  "main": "js/index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "http-server -c-1 build",
     "dev": "run-p watch serve",
     "test": "mocha --recursive --compilers js:babel-core/register",
     "build": "run-s build:*",
@@ -62,6 +62,7 @@
   },
   "dependencies": {
     "express": "^4.14.0",
+    "immutability-helper": "^2.1.1",
     "isomorphic-fetch": "^2.2.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",

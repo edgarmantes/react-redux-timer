@@ -19,4 +19,6 @@ var Card = function(props){
 	)
 };
 
+
+
 module.exports = Card;

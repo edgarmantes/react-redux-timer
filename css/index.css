@@ -4,11 +4,18 @@ a { text-decoration: none; color: #00A5CC; }
 li { list-style-type: none; }
 
 header { 
-	width: 100%; 
-	height: 50px; 
+	width: 100%;  
 	margin: auto;
 	border-bottom: 1px solid #EEE;
+
+	display: inline-block;
+	text-align: center;
+	height: 60px;
+
+	max-height: 70px;
+	background-color: #b3e0ff;
 }
+
 #brand {
 	float: left;
 	line-height: 50px;
@@ -17,14 +24,16 @@ header {
 	font-weight: bolder;
    margin: 0 0 0 6px;
 }
-nav { width: 100%; text-align: center; }
-nav a { 
+nav { 
+	width: 100%; 
+ 	text-align: center;
+}
+/*nav a { 
 	display: block; 
 	padding: 15px 0;
-	border-bottom: 1px solid #C3AA6E;
 	color: #F0EADC;
 }
-nav a:hover { background: #E5DAC0; color: #FFF; }
+nav a:hover { background: #E5DAC0; color: #FFF; }*/
 nav li:last-child a { border-bottom: none; }
 
 /*-----------------------------------------*/
@@ -33,7 +42,7 @@ nav li:last-child a { border-bottom: none; }
 	width: 240px;
 	height: 100%;
 	position: absolute;
-	background: #D9C9A3;
+	background: rgba(229, 218, 192, 0.9);
 	left: -240px;
 	transition: all .3s ease-in-out;
 	-webkit-transition: all .3s ease-in-out;
@@ -45,19 +54,20 @@ nav li:last-child a { border-bottom: none; }
 .menu-icon {
 	padding: 10px 20px;
 	background: #E5DAC0;
-	color: #987D3E;
+	color: #ffffff;
 	cursor: pointer;
-	float: left;
-	margin: 6px 6px 0 0;
+	font-size: 18px;
 	border-radius: 5px;
+	position: fixed;
+	top: 3px;
+	left: 19px;
+
+
 }
 #menuToggle { display: none; }
 
 #menuToggle:checked ~ .menu { position: absolute; left: 0; }
 
-header {
-	text-align: center;
-}
 
 .innercard {
 	display: inline-block;
@@ -67,7 +77,11 @@ header {
 .card-descript {
 	height: 200px;	
 	padding : 24px;
-	border: 1px solid black;
+	border: none;
+	background-color: #fff;
+	-webkit-box-shadow: -11px 19px 19px -4px rgba(112,106,112,1);
+	-moz-box-shadow: -11px 19px 19px -4px rgba(112,106,112,1);
+	box-shadow: -11px 19px 19px -4px rgba(112,106,112,1);
 }
 
 .info {
@@ -80,4 +94,122 @@ header {
 .enter-btns {
 	text-align: center; 
 	border: 1px, solid, black;
+}
+
+.clock {
+	max-height: 50px;
+}
+
+.timetracker {
+	display: inline-block;
+	max-width: 80%;
+	font-size: 6vh;
+	font-family: 'Lobster', cursive;
+}
+
+body {
+	background-color: #f2f2f2;
+}
+
+.sidebar-header {
+	margin: 10px 0 ;
+	font-family: 'Lobster', cursive;
+	font-size: 25px;
+}
+
+label {
+	margin: 5px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	float: left;
+	font-size: 20px;
+}
+
+.newcardname {
+	float: left;
+	width: 100%;
+	height: 30px;
+}
+
+.newform {
+	display: inline-block;
+	width: 90%;
+/*	margin-left: 5%;
+	margin-right: auto;*/
+}
+
+
+.btn {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	border: none;
+	background-color: #E5DAC0;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 20px;
+}
+
+.btn:hover {
+	width: 100%;
+	text-align: center;
+	background-color: #f0eadb ;
+}
+
+.btn:active {
+   border-top-color: #85c3ed;
+   background: #85c3ed;
+}
+
+.create-card {
+	font-size: 30px;
+	background-color: #f0eadb;
+	margin-bottom: 15px;	
+}
+
+.create-card:hover {
+	font-size: 35px;
+}
+
+strong {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+
+}
+
+#time {
+	font-size: 430%;
+	text-align: center;
+	color: #ff0000;
+}
+
+.cPage {
+	font-size: 200%;
+}
+
+#cardName {
+	margin: 20px 0;
+}
+
+.fb {
+	height: 30px;
+	padding-right: 20px;
+}
+
+.facebook-btn {
+	
+}
+
+.but-card {
+	margin: 3vw auto 1vw;
+	width: 40%;
+	height: 53px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 4vh;
+}
+
+#control {
+	margin: 3vw auto 1vw;
+	width: 40%;
+	height: 53px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 4vh;
 }
