@@ -13,7 +13,10 @@ var Home = React.createClass({
 		var cardname = document.getElementsByClassName('newcardname')[0].value;
 		var carddescription = document.getElementById('newcarddescription').value;
 		this.props.dispatch(actions.createNewCard(cardname, carddescription));
-		console.log(carddescription)
+		// document.getElementsByClassName('newcardname')[0].empty();
+		// document.getElementById('newcarddescription').value='';
+		document.formcreate.reset();
+		document.getElementById('menuToggle').checked = false;
 	},	
 		
 	render: function(props){
@@ -28,17 +31,17 @@ var Home = React.createClass({
 				</header>
 				<nav className="menu">
 					<h4 className="sidebar-header">New Card Form</h4>
-					<form className="newform">
+					<form name="formcreate" className="newform">
 						<label>New Card Name</label><br/>
-						<input className="newcardname" placeholder="New Card Name" required></input><br/>
+						<input className="newcardname" placeholder="New Card Name" type="text" required={true}></input><br/>
 						<label>Description</label><br/>		
-						<textarea rows="10" cols="28" id="newcarddescription" placeholder=" new card description" />
+						<textarea rows="10" cols="28" id="newcarddescription" placeholder=" new card description" type="text" required={true}/>
 						<input type="submit" className="create-card btn" onClick={this.createCard} value="Create New Card" />
 					</form>
-					<Link to="signin"><button className="out-btn btn">Sign Out</button></Link>
-					<Link to="home"><button className="home-btn btn">Home</button></Link>
+				
 				</nav>
 				<div>
+
 					{this.props.children}
 				</div>
 			</div>

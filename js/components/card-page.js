@@ -90,6 +90,7 @@ var CardPage = React.createClass({
 				</div>
 				<button className="facebook-btn but-card"><img className="fb" src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/facebook_circle-128.png" />Share</button><br/>				
 				<Link to="/"><button className="delete-btn but-card" onClick={this.deleteCard} >Delete</button></Link>
+				<Link to="/"><div className="back-home"><img className="home-icon" src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/home-128.png" /></div></Link>
 				
 			</div>
 		)

@@ -9,9 +9,9 @@ var Card = function(props){
 			<div className="innercard col-4">
 				<Link to={ '/' + props.index } >  
 					<div className="card-descript">
-						<div className="info"><strong>Name:   </strong>{props.cardname}</div>
-						<div className="info"><strong>Accum. Time:   </strong> {props.time}</div>
-						<div className="info"><strong>Description:   </strong> {props.description}</div>
+						<div className="info"><strong>Name :   </strong>{props.cardname}</div>
+						<div className="info"><strong>Accum. Time :   </strong> {props.time}</div>
+						<div className="info"><strong>Description :   </strong> {props.description}</div>
 					</div>
 				</Link>
 			</div>

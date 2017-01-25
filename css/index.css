@@ -224,3 +224,16 @@ strong {
 .delete-btn {
 	background-color: red;
 }
+
+.back-home {
+	display: inline-block;
+	position: fixed;
+	bottom: 30px;
+	background-color: #b3e0ff;
+	border-radius: 100%;
+}
+
+.home-icon {
+	padding: 11px;
+	height: 70px;
+}
