@@ -15,11 +15,16 @@ worth your time!! ;)
 
 *<h3>Mobile Version</h3>*
 <br/>
+This app is mobile responsive making it easily accessible on any mobile or home device tat has access to the Internet. 
 
 <img src="https://cloud.githubusercontent.com/assets/15925701/22277041/ede3c7b4-e27d-11e6-9fc2-c8dfa8b02f77.PNG" height="515px">
 <img src="https://cloud.githubusercontent.com/assets/15925701/22277042/efb6df68-e27d-11e6-8041-6f6ea6858798.PNG" height="515px">
 <img src="https://cloud.githubusercontent.com/assets/15925701/22277047/f81a836c-e27d-11e6-8e9a-131f381014c2.PNG" height="515px">
 
-
-
-
+<h3>Technologies</h3>
+React.js 
+Redux.js
+Node.js
+Express.js
+HTML5 
+CSS3 
