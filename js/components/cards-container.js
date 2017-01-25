@@ -22,7 +22,7 @@ var CardsContainer = React.createClass({
 });
 
 
-var mapStateToProps = function(state, props){
+var mapStateToProps = function(state, props){		// maps the state to the props of this component
 	return {
 		cards : state.cards
 	}

@@ -13,14 +13,13 @@ var Home = React.createClass({
 		var cardname = document.getElementsByClassName('newcardname')[0].value;
 		var carddescription = document.getElementById('newcarddescription').value;
 		this.props.dispatch(actions.createNewCard(cardname, carddescription));
-		// document.getElementsByClassName('newcardname')[0].empty();
-		// document.getElementById('newcarddescription').value='';
-		document.formcreate.reset();
-		document.getElementById('menuToggle').checked = false;
+
+		document.formcreate.reset();			// clears the input and textarea field of the side bar 
+		document.getElementById('menuToggle').checked = false;		// unchecks the radio button to slide the side bar back in to hide after creating a new card
 	},	
 		
 	render: function(props){
-		console.log('rerender test')
+
 		return (
 			<div className="navigation">
 				<input type="checkbox" id="menuToggle" />
@@ -41,8 +40,7 @@ var Home = React.createClass({
 				
 				</nav>
 				<div>
-
-					{this.props.children}
+					{this.props.children} 	
 				</div>
 			</div>
 		)

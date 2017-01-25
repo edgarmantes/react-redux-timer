@@ -48,7 +48,7 @@ function post() {
 	}
 
 	FB.api('/me/feed', 'post', message, function(response) {
-		console.log(response);
+
 	});
 }
 

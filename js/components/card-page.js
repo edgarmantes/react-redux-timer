@@ -11,12 +11,12 @@ var actions = require('../actions/index');
 var CardPage = React.createClass({
 	getInitialState: function(){
 		return {
-			timerActive: false,
-			cards: null
+			timerActive: false,   // When true the timer will begin counting until change of state to false
+			cards: null			  // Initially null until it retrieves/creates cards
 		}
 	},
 
-	startTimer: function(){
+	startTimer: function(){  		// Timer logic
 
 		if (this.state.timerActive) {
 			var timer = document.getElementById('time').innerHTML;
@@ -47,34 +47,30 @@ var CardPage = React.createClass({
 
 	changeState: function(event){
 		event.preventDefault();
-		if ( this.state.timerActive == false ) {
+		if ( this.state.timerActive == false ) { 			// If false it will change the timerActive state to true and then initiate the startTimer function
 			this.state.timerActive = true;
 			this.startTimer();
-			console.log('timer has started');
-			document.getElementById('control').innerHTML = 'Pause';
-		} else {
-			this.state.timerActive = false;
-			console.log('timer has paused');
+			document.getElementById('control').innerHTML = 'Pause';		// Changes the button value based on the state of the timer
+		} else {							
+			this.state.timerActive = false;								// Stops the timer
 			var time = document.getElementById('time').innerHTML;
 			var cardIndex = this.props.params.cardIndex;
-			this.props.dispatch(actions.saveTime(time, cardIndex));
+			this.props.dispatch(actions.saveTime(time, cardIndex));		// Dispatches the saveTime function
 			document.getElementById('control').innerHTML = 'Start'
 		}
 	},
 
 	deleteCard: function(event){
 		event.stopPropagation();
-
-		this.props.dispatch(actions.deleteCard(this.props.params.cardIndex))
-
+		this.props.dispatch(actions.deleteCard(this.props.params.cardIndex))	// deletes the card on current card-page
 	},
 
 	render: function(props){
-		if (this.props.cards) {
+		if (this.props.cards) {						// if this.props.cards is true the this.state cards array will be set
 			this.state.cards = this.props.cards;
 		}
 
-		var card = this.state.cards[this.props.params.cardIndex];
+		var card = this.state.cards[this.props.params.cardIndex]; 			// The index of the current card on the page is passed in to reference the properties of that object
 		
 		var name = card.cardname;
 		var time = card.time;

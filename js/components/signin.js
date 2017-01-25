@@ -20,9 +20,3 @@ var SignIn = React.createClass({
 })
 
 module.exports = SignIn;
-
-// {
-// 	username:
-// 	password:
-// 	cards: []
-// }
