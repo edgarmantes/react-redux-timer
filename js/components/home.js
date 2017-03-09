@@ -12,7 +12,7 @@ var Home = React.createClass({
 	componentWillMount: function(){
 
 		var localArray = localStorage.getItem('TimerProjectArray');
-		
+
 		this.props.dispatch(actions.getCards(localArray))
 	},
 
@@ -42,7 +42,7 @@ var Home = React.createClass({
 						<label>New Card Name</label><br/>
 						<input className="newcardname" placeholder="New Card Name" type="text" required={true}></input><br/>
 						<label>Description</label><br/>		
-						<textarea rows="10" cols="28" id="newcarddescription" placeholder=" new card description" type="text" required={true}/>
+						<textarea rows="10" cols="28" id="newcarddescription" placeholder="React/Redux/MongoDB... etc." type="text" required={true}/>
 						<input type="submit" className="create-card btn" onClick={this.createCard} value="Create New Card" />
 					</form>
 				

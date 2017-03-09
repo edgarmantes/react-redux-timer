@@ -73,6 +73,28 @@ nav li:last-child a { border-bottom: none; }
 }
 
 
+.makeNewCard {
+	width: 300px;
+    margin: 20vh auto;
+    text-align: center;
+    background-color: white;
+    -webkit-box-shadow: -2px 2px 2px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: -2px 2px 2px 1px rgba(0,0,0,0.3);
+    box-shadow: -2px 2px 2px 1px rgba(0,0,0,0.3);
+    padding: 30px;
+    animation: fadecolor 2s;
+}
+
+@keyframes fadecolor {
+	from {
+		background-color: rgba(0,0,0,0.7);
+	}
+
+	to {
+		background-color: white;
+	}
+}
+
 .innercard {
 	display: inline-block;
 	padding: 10px;

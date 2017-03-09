@@ -12,8 +12,13 @@ var timerReducer = function(state, action){
 	state = state || initialCardState;
 
 	if ( action.type === actions.GET_CARDS ) {
-
-		return Object.assign({}, state, { cards: JSON.parse(action.cards) })
+		var cards = null;
+		if (action.cards === null){
+			cards = []
+		} else {
+			cards = JSON.parse(action.cards);
+		}
+		return Object.assign({}, state, { cards: cards })
 		// return state
 
 	} else if ( action.type === actions.CREATE_NEW_CARD ){
@@ -23,7 +28,7 @@ var timerReducer = function(state, action){
 			description: action.description,
 			key: null					// this is kept null until cardsArray gets mapped over to pass in each cards current index position and then changes the state with redux
 		};		
-		
+		console.log(26, state, newCard)
 		var cardsArray = state.cards.concat(newCard);
 		var newArray = cardsArray.map(function(object, index){		// map() used to add the key property of the newCard object in the cardsArray
 			object.key = index;
