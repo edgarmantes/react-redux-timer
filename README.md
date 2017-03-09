@@ -1,11 +1,13 @@
 <h1>How Long Did It Take You?!?! Do You Know...</h1>
+###Live Site: 
+[Come check it out](https://agile-plateau-82595.herokuapp.com/#/)<br/>
 **If you like to be productive and precise then you have to check this out!**
 
 Have you ever wondered exactly how long it takes to complete a project? Well with this app you will have to ability to know exactly that!
 If you are the type of person that is about productivity and precision then this app might be for you. Come check it out because this is 
 worth your time!! ;)
 
-<h2>Use Case</h2><br/>
+##Use Case
 This web based application is useful for people who would like to track their time to complete projects in order to gauge their progress in profeciency on that perticular type of project. Or maybe people would like to know their average time to complete a project in order to estimate to a client approximately how long it takes for them to complete a similar project. 
 
 <h3>Desktop Version</h3><br/>
