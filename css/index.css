@@ -28,12 +28,7 @@ nav {
 	width: 100%; 
  	text-align: center;
 }
-/*nav a { 
-	display: block; 
-	padding: 15px 0;
-	color: #F0EADC;
-}
-nav a:hover { background: #E5DAC0; color: #FFF; }*/
+
 nav li:last-child a { border-bottom: none; }
 
 /*-----------------------------------------*/
@@ -57,6 +52,7 @@ nav li:last-child a { border-bottom: none; }
 	background-image: url(../images/plus.png);
 	background-repeat: no-repeat;
 	background-position: center;
+	border: 2px solid white;
 	color: #ffffff;
 	cursor: pointer;
 	font-size: 18px;
@@ -67,9 +63,14 @@ nav li:last-child a { border-bottom: none; }
 
 
 }
-#menuToggle { display: none; }
+#menuToggle { 
+	display: none; 
+}
 
-#menuToggle:checked ~ .menu { position: absolute; left: 0; }
+#menuToggle:checked ~ .menu { 
+	position: absolute; left: 0; 
+	z-index: 2;
+}
 
 
 .innercard {
@@ -78,6 +79,7 @@ nav li:last-child a { border-bottom: none; }
 }
 
 .card-descript {
+	text-align: center;
 	height: 200px;	
 	padding : 24px;
 	border: none;
@@ -98,7 +100,11 @@ nav li:last-child a { border-bottom: none; }
 
 
 .info {
-	margin: 5px 0 5px 0;
+	margin: 5% 0;
+}
+
+.info-name {
+	font-size: 35px;
 }
 
 /*Call to Action Page styling*/
@@ -146,8 +152,6 @@ label {
 .newform {
 	display: inline-block;
 	width: 90%;
-/*	margin-left: 5%;
-	margin-right: auto;*/
 }
 
 
@@ -189,6 +193,7 @@ strong {
 
 .page {
 	text-align: center;
+	margin-top: 5%;
 }
 
 #time {
@@ -209,9 +214,16 @@ strong {
 
 }
 
+.pageContainer {
+	position: relative;
+	background-color: white;
+    height: 92vh;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+}
+
 #cardName {
-	margin: 20px 0;
-	font-size: 30px;
+	margin: 50px 0;
+	font-size: 50px;
 }
 
 .fb {
@@ -236,7 +248,6 @@ strong {
 	height: 50px;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-size: 4vh;
-	vertical-align: top;
     margin-left: 30px;
     background-image: url(../images/play.png);
     background-repeat: no-repeat;
@@ -252,15 +263,11 @@ strong {
 
 #control:hover {
 	cursor: pointer;
-	margin-left: 35px;
-	margin-top: -5px;
-	-webkit-box-shadow: -7px 7px 8px 0px rgba(0,0,0,0.3);
-	-moz-box-shadow: -7px 7px 8px 0px rgba(0,0,0,0.3);
-	box-shadow: -7px 7px 8px 0px rgba(0,0,0,0.3);
 }
 
 .time-form {
 	text-align: center;
+	margin-bottom: 15px;
 }
 
 .delete-btn {
@@ -293,4 +300,59 @@ strong {
 .home-icon {
 	padding: 11px;
 	height: 70px;
+}
+
+
+.social-btn {
+	position: absolute;
+	left: 0;
+	top: 110px;
+	width: 50px;
+	height: 150px;
+	text-align: center;
+	margin-top: 50px;
+	border: none;
+	background-color: rgba(0,0,0,0.5);;
+}
+
+.but-card {
+	width: 30px;
+    height: 28px;
+    border: none;
+    margin: 9px 0px;
+}
+
+.facebook-btn {
+	background-image: url(../images/facebook.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: transparent;
+}
+
+.twitter-btn {
+	background-image: url(../images/twitter.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: transparent;
+}
+
+.googleplus-btn {
+	background-image: url(../images/google.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: transparent;
+}
+
+
+@media only screen and (max-width: 600px) {
+	.social-btn {
+		top: unset;
+		bottom: 0;
+		width: 150px;
+		height: 50px;
+	}
+
+	.but-card {
+		margin: 9px 7px;
+	}
 }

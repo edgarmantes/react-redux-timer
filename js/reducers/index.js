@@ -53,10 +53,12 @@ var timerReducer = function(state, action){
 			state.cards.splice(0,1);   // (0,1) - starting at the 0th index delete 1 object
 
 		} else {
-
+			
 			state.cards.splice(index, 1);		// Deletes the current card on the page because of passing in the index value
 
 		}
+
+		localStorage.setItem('TimerProjectArray', JSON.stringify(state.cards))
 
 		return Object.assign({}, state, {cards: state.cards})  // Changes the state on redux
 	}

@@ -12,7 +12,7 @@ var Home = React.createClass({
 	componentWillMount: function(){
 
 		var localArray = localStorage.getItem('TimerProjectArray');
-
+		
 		this.props.dispatch(actions.getCards(localArray))
 	},
 

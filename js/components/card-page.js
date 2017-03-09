@@ -15,6 +15,16 @@ var CardPage = React.createClass({
 		}
 	},
 
+	componentDidMount: function(props){
+		if (document.getElementById('menuToggle').checked) {
+
+			document.getElementById('menuToggle').checked = false;
+
+		} else {
+			return
+		}
+	},
+
 	startTimer: function(){  		// Timer logic
 
 		if (this.state.timerActive) {
@@ -87,19 +97,22 @@ var CardPage = React.createClass({
 							{time}		
 						</div>
 						<button id="control" onClick={this.changeState}></button>
-						<Link to="/"><button className="delete-btn but-card" onClick={this.deleteCard} ></button></Link>
+						<Link to="/"><button className="delete-btn" onClick={this.deleteCard} ></button></Link>
 					</div>
 					<div id="descript"><strong className="cPage"></strong>{description}</div>
 					
 				</div>
-				<button className="facebook-btn but-card" onClick={this.login}><img className="fb" src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/facebook_circle-128.png" />Share</button><br/>
-				
+				<div className="social-btn col-12">
+					<button className="facebook-btn but-card"></button>
+					<button className="twitter-btn but-card"></button>
+					<button className="googleplus-btn but-card"></button>
+				</div>
 			</div>
 		)
 	}
 });
 
-
+// <a href="https://www.faceboook.com/sharer/sharer.php?u=URLENCODED_URL&t=TITLE" onClick={"javascript:window.open(this.href\", \'menubar=no,toolbar=no, resizable=yes,scrollbars=yes,height=300,width=600\');return false;" target="_blank" title="Share On Twitter"}></a>
 
 var mapStateToProps = function(state, props){
 	return {

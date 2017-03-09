@@ -6,7 +6,15 @@ var actions = require('../actions/index');
 var Card = require('./card');
 
 var CardsContainer = React.createClass({
+	componentDidMount: function(props){
+		if (document.getElementById('menuToggle').checked) {
 
+			document.getElementById('menuToggle').checked = false;
+
+		} else {
+			return
+		}
+	},
 
 	render: function(props){
 		var cardsArray = this.props.cards.map(function(object, index){
