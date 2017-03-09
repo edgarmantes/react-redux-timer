@@ -5,7 +5,7 @@ var webpack = require('webpack');
 module.exports = {
     entry: path.resolve(__dirname, 'js/index.js'),
     output: {
-        path: path.resolve(__dirname, 'build/js'),
+        path: path.resolve(__dirname, 'public/js'),
         filename: 'index.js',
     },
     devtool: 'inline-source-map',

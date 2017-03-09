@@ -28,12 +28,7 @@ nav {
 	width: 100%; 
  	text-align: center;
 }
-/*nav a { 
-	display: block; 
-	padding: 15px 0;
-	color: #F0EADC;
-}
-nav a:hover { background: #E5DAC0; color: #FFF; }*/
+
 nav li:last-child a { border-bottom: none; }
 
 /*-----------------------------------------*/
@@ -54,6 +49,10 @@ nav li:last-child a { border-bottom: none; }
 .menu-icon {
 	padding: 10px 20px;
 	background: #E5DAC0;
+	background-image: url(../images/plus.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid white;
 	color: #ffffff;
 	cursor: pointer;
 	font-size: 18px;
@@ -64,28 +63,59 @@ nav li:last-child a { border-bottom: none; }
 
 
 }
-#menuToggle { display: none; }
+#menuToggle { 
+	display: none; 
+}
 
-#menuToggle:checked ~ .menu { position: absolute; left: 0; }
+#menuToggle:checked ~ .menu { 
+	position: absolute; left: 0; 
+	z-index: 2;
+}
 
 
 .innercard {
 	display: inline-block;
 	padding: 10px;
+	animation: fadein 2s;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 .card-descript {
+	text-align: center;
 	height: 200px;	
 	padding : 24px;
 	border: none;
 	background-color: #fff;
-	-webkit-box-shadow: -11px 19px 19px -4px rgba(112,106,112,1);
-	-moz-box-shadow: -11px 19px 19px -4px rgba(112,106,112,1);
-	box-shadow: -11px 19px 19px -4px rgba(112,106,112,1);
+	-webkit-box-shadow: -2px 2px 3px 1px rgba(0,0,0,0.4);
+	-moz-box-shadow: -2px 2px 3px 1px rgba(0,0,0,0.4);
+	box-shadow: -2px 2px 3px 1px rgba(0,0,0,0.4);
 }
 
+.card-descript:hover {
+	margin-left: 10px;
+    margin-top: -10px;
+    width: 100%;
+	-webkit-box-shadow: -12px 12px 3px 1px rgba(0,0,0,0.4);
+	-moz-box-shadow: -12px 12px 3px 1px rgba(0,0,0,0.4);
+	box-shadow: -12px 12px 8px 1px rgba(0,0,0,0.3);
+}
+
+
 .info {
-	margin: 5px 0 5px 0;
+	margin: 5% 0;
+}
+
+.info-name {
+	font-size: 35px;
 }
 
 /*Call to Action Page styling*/
@@ -133,8 +163,6 @@ label {
 .newform {
 	display: inline-block;
 	width: 90%;
-/*	margin-left: 5%;
-	margin-right: auto;*/
 }
 
 
@@ -174,7 +202,13 @@ strong {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
+.page {
+	text-align: center;
+	margin-top: 5%;
+}
+
 #time {
+	display: inline-block;
 	font-size: 430%;
 	text-align: center;
 	color: #ff0000;
@@ -191,9 +225,17 @@ strong {
 
 }
 
+.pageContainer {
+	position: relative;
+	background-color: white;
+    height: 92vh;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    animation: fadein 2s;
+}
+
 #cardName {
-	margin: 20px 0;
-	font-size: 30px;
+	margin: 50px 0;
+	font-size: 50px;
 }
 
 .fb {
@@ -206,7 +248,7 @@ strong {
 }
 
 .but-card {
-	margin: 3vw auto 1vw;
+	vertical-align: top;
 	width: 40%;
 	height: 53px;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -214,15 +256,49 @@ strong {
 }
 
 #control {
-	margin: 3vw auto 1vw;
-	width: 40%;
-	height: 53px;
+	width: 50px;
+	height: 50px;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-size: 4vh;
+    margin-left: 30px;
+    background-image: url(../images/play.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(66, 244, 89);
+    border-radius: 100%;
+    border: none;
+    -webkit-box-shadow: -2px 2px 4px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: -2px 2px 4px 0px rgba(0,0,0,0.6);
+    box-shadow: -2px 2px 4px 0px rgba(0,0,0,0.6);
+    outline: none;
+}
+
+#control:hover {
+	cursor: pointer;
+}
+
+.time-form {
+	text-align: center;
+	margin-bottom: 15px;
 }
 
 .delete-btn {
 	background-color: red;
+	background-image: url(../images/delete.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+	-webkit-box-shadow: -2px 2px 4px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: -2px 2px 4px 0px rgba(0,0,0,0.6);
+    box-shadow: -2px 2px 4px 0px rgba(0,0,0,0.6);
+	border: none;
+	margin-left: 30px;
+}
+
+.delete-btn {
+	cursor: pointer;
 }
 
 .back-home {
@@ -236,4 +312,59 @@ strong {
 .home-icon {
 	padding: 11px;
 	height: 70px;
+}
+
+
+.social-btn {
+	position: absolute;
+	left: 0;
+	top: 110px;
+	width: 50px;
+	height: 150px;
+	text-align: center;
+	margin-top: 50px;
+	border: none;
+	background-color: rgba(0,0,0,0.5);;
+}
+
+.but-card {
+	width: 30px;
+    height: 28px;
+    border: none;
+    margin: 9px 0px;
+}
+
+.facebook-btn {
+	background-image: url(../images/facebook.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: transparent;
+}
+
+.twitter-btn {
+	background-image: url(../images/twitter.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: transparent;
+}
+
+.googleplus-btn {
+	background-image: url(../images/google.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: transparent;
+}
+
+
+@media only screen and (max-width: 600px) {
+	.social-btn {
+		top: unset;
+		bottom: 0;
+		width: 150px;
+		height: 50px;
+	}
+
+	.but-card {
+		margin: 9px 7px;
+	}
 }
