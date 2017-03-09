@@ -13,7 +13,9 @@ var timerReducer = function(state, action){
 
 	if ( action.type === actions.GET_CARDS ) {
 
-		return state
+		return Object.assign({}, state, { cards: JSON.parse(action.cards) })
+		// return state
+
 	} else if ( action.type === actions.CREATE_NEW_CARD ){
 		var newCard = {
 			cardname: action.cardname,
@@ -27,14 +29,20 @@ var timerReducer = function(state, action){
 			object.key = index;
 			return object
 		});
+
+		// LocalStorage update
+		localStorage.setItem('TimerProjectArray', JSON.stringify(cardsArray))
+		
+		// Redux Store update
 		return Object.assign({}, state, { cards: cardsArray })		// Changes the state with redux
 
 	} else if ( action.type === actions.SAVE_TIME ){
 		var object = state.cards[action.cardIndex];
 		var updateObject = update(object, { time: {$apply: function(){return action.time} }}) // uses 'update' (immutability-helper) to grab the object from the array and change the time after it has been paused
 		state.cards.splice(action.cardIndex, 1, updateObject)			// slice() will remove the object that was updated and inserts the newly updated copy to the current index of that card.
-
+		localStorage.setItem('TimerProjectArray', JSON.stringify(state.cards))
 		return Object.assign({}, state, {cards: state.cards})			// the 'state.cards' is the value of cards to change the state on redux
+	
 	} else if ( action.type === actions.DELETE_CARD ){
 
 
@@ -45,10 +53,12 @@ var timerReducer = function(state, action){
 			state.cards.splice(0,1);   // (0,1) - starting at the 0th index delete 1 object
 
 		} else {
-
+			
 			state.cards.splice(index, 1);		// Deletes the current card on the page because of passing in the index value
 
 		}
+
+		localStorage.setItem('TimerProjectArray', JSON.stringify(state.cards))
 
 		return Object.assign({}, state, {cards: state.cards})  // Changes the state on redux
 	}

@@ -3,7 +3,6 @@ var React = require('react');
 var router = require('react-router');
 var connect = require('react-redux').connect;
 
-
 var Link = router.Link;
 
 var actions = require('../actions/index');
@@ -13,6 +12,16 @@ var CardPage = React.createClass({
 		return {
 			timerActive: false,   // When true the timer will begin counting until change of state to false
 			cards: null			  // Initially null until it retrieves/creates cards
+		}
+	},
+
+	componentDidMount: function(props){
+		if (document.getElementById('menuToggle').checked) {
+
+			document.getElementById('menuToggle').checked = false;
+
+		} else {
+			return
 		}
 	},
 
@@ -47,16 +56,19 @@ var CardPage = React.createClass({
 
 	changeState: function(event){
 		event.preventDefault();
+
+		var control = document.getElementById('control');
+
 		if ( this.state.timerActive == false ) { 			// If false it will change the timerActive state to true and then initiate the startTimer function
 			this.state.timerActive = true;
 			this.startTimer();
-			document.getElementById('control').innerHTML = 'Pause';		// Changes the button value based on the state of the timer
+			control.style.backgroundImage = 'url(../images/pause.png)'		// Changes the button value based on the state of the timer
 		} else {							
 			this.state.timerActive = false;								// Stops the timer
 			var time = document.getElementById('time').innerHTML;
 			var cardIndex = this.props.params.cardIndex;
 			this.props.dispatch(actions.saveTime(time, cardIndex));		// Dispatches the saveTime function
-			document.getElementById('control').innerHTML = 'Start'
+			control.style.backgroundImage = 'url(../images/play.png)'
 		}
 	},
 
@@ -79,21 +91,28 @@ var CardPage = React.createClass({
 		return (
 			<div className="pageContainer row">
 				<div className={"page col-12 " + this.props.params.cardIndex} >
-					<div id="cardName"><strong className="cPage">Card Name:  </strong>{name}</div>
-					<strong className="cPage">Accummulated Time:  </strong><div id="time">{time}</div>
-					<div id="descript"><strong className="cPage">Description:  </strong>{description}</div>
-					<button id="control" onClick={this.changeState}>Start</button>
+					<div id="cardName"><strong className="cPage"></strong>{name}</div>
+					<div className="time-form">
+						<div id="time">
+							{time}		
+						</div>
+						<button id="control" onClick={this.changeState}></button>
+						<Link to="/"><button className="delete-btn" onClick={this.deleteCard} ></button></Link>
+					</div>
+					<div id="descript"><strong className="cPage"></strong>{description}</div>
+					
 				</div>
-				<button className="facebook-btn but-card"><img className="fb" src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/facebook_circle-128.png" />Share</button><br/>				
-				<Link to="/"><button className="delete-btn but-card" onClick={this.deleteCard} >Delete</button></Link>
-				<Link to="/"><div className="back-home"><img className="home-icon" src="https://cdn3.iconfinder.com/data/icons/iconic-1/32/home-128.png" /></div></Link>
-				
+				<div className="social-btn col-12">
+					<button className="facebook-btn but-card"></button>
+					<button className="twitter-btn but-card"></button>
+					<button className="googleplus-btn but-card"></button>
+				</div>
 			</div>
 		)
 	}
 });
 
-
+// <a href="https://www.faceboook.com/sharer/sharer.php?u=URLENCODED_URL&t=TITLE" onClick={"javascript:window.open(this.href\", \'menubar=no,toolbar=no, resizable=yes,scrollbars=yes,height=300,width=600\');return false;" target="_blank" title="Share On Twitter"}></a>
 
 var mapStateToProps = function(state, props){
 	return {

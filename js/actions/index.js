@@ -1,9 +1,10 @@
 
 // Upon initiate page load, cards will be retrieved
 var GET_CARDS = 'GET_CARDS';
-var getCards = function(){
+var getCards = function(cardsArray){
 	return {
-		type: GET_CARDS
+		type: GET_CARDS,
+		cards: cardsArray
 	}
 };
 
