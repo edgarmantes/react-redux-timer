@@ -13,7 +13,9 @@ var timerReducer = function(state, action){
 
 	if ( action.type === actions.GET_CARDS ) {
 
-		return state
+		return Object.assign({}, state, { cards: JSON.parse(action.cards) })
+		// return state
+
 	} else if ( action.type === actions.CREATE_NEW_CARD ){
 		var newCard = {
 			cardname: action.cardname,
@@ -27,6 +29,11 @@ var timerReducer = function(state, action){
 			object.key = index;
 			return object
 		});
+
+		// LocalStorage update
+		localStorage.setItem('TimerProjectArray', JSON.stringify(cardsArray))
+		
+		// Redux Store update
 		return Object.assign({}, state, { cards: cardsArray })		// Changes the state with redux
 
 	} else if ( action.type === actions.SAVE_TIME ){
@@ -35,6 +42,7 @@ var timerReducer = function(state, action){
 		state.cards.splice(action.cardIndex, 1, updateObject)			// slice() will remove the object that was updated and inserts the newly updated copy to the current index of that card.
 
 		return Object.assign({}, state, {cards: state.cards})			// the 'state.cards' is the value of cards to change the state on redux
+	
 	} else if ( action.type === actions.DELETE_CARD ){
 
 

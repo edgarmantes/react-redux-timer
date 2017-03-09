@@ -54,6 +54,9 @@ nav li:last-child a { border-bottom: none; }
 .menu-icon {
 	padding: 10px 20px;
 	background: #E5DAC0;
+/*	background-image: url(../../img/plus.png);
+	background-repeat: no-repeat;
+	background-position: center;*/
 	color: #ffffff;
 	cursor: pointer;
 	font-size: 18px;
