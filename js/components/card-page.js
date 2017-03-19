@@ -25,7 +25,7 @@ var CardPage = React.createClass({
 		}
 	},
 
-	startTimer: function(){  		// Timer logic
+	startTimer: function(){  	// Timer logic
 
 		if (this.state.timerActive) {
 			var timer = document.getElementById('time').innerHTML;

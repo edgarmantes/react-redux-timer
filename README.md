@@ -1,6 +1,7 @@
 <h1>How Long Did It Take You?!?! Do You Know...</h1>
 ###Live Site: 
-[Come check it out](https://agile-plateau-82595.herokuapp.com/#/)<br/>
+[Come check it out!](https://agile-plateau-82595.herokuapp.com/#/)
+
 **If you like to be productive and precise then you have to check this out!**
 
 Have you ever wondered exactly how long it takes to complete a project? Well with this app you will have to ability to know exactly that!
@@ -36,3 +37,16 @@ This app is mobile responsive making it easily accessible on any mobile or home 
 * Node.js was used for server side rendering.<br/>
 * Express.js was used for routing methods on the backend.<br/>
  
+
+###Start Dev Environ
+To have webpack watch .js files and chokidar watch html and css, you first have to install nodemon globally, and then run:
+
+```
+nodemon server.js  /*or without nodemon*/ node server.js
+```
+When the server is up and running then you run:
+
+```
+npm run dev
+```
+
