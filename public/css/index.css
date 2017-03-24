@@ -162,7 +162,10 @@ nav li:last-child a { border-bottom: none; }
 
 .call-fixbackground-carosoul {
 	position: relative;
-	background-color: lightpink;
+	background-color: black;
+	background-image: url(../images/beach-img.png);
+	background-repeat: no-repeat;
+	background-position: center;
 	height: 60%;
 	text-align: center;
 }
@@ -186,15 +189,15 @@ nav li:last-child a { border-bottom: none; }
 /*Begin - carosoul*/
 /* When radio button is checked the nth-of-type will change its background color to indicate that it is the one selected */
 .carousel__activator:nth-of-type(1):checked ~ .carousel__indicators > :nth-of-type(1) {
-  background-color: rgb(0,0,0);
+  background-color: rgba(230, 230, 230, 0.5);
 }
 
 .carousel__activator:nth-of-type(2):checked ~ .carousel__indicators > :nth-of-type(2) {
-  background-color: rgb(0,0,0);
+  background-color: rgba(230, 230, 230, 0.5);
 }
 
 .carousel__activator:nth-of-type(3):checked ~ .carousel__indicators > :nth-of-type(3) {
-  background-color: rgb(0,0,0);
+  background-color: rgba(230, 230, 230, 0.5);
 }
 
 
@@ -241,7 +244,7 @@ nav li:last-child a { border-bottom: none; }
   	display: none;
     height: 100%;
     width: 100%;
-    border: 1px solid black;
+/*    border: 1px solid black;*/
 }
 
 .carousel__indicators {
@@ -254,7 +257,7 @@ nav li:last-child a { border-bottom: none; }
   display: inline-block;
   width: 25px;
   height: 25px;
-  border: 1px solid black;
+  border: 1px solid rgba(230, 230, 230, 0.5);
   border-radius: 50%;
 }
 
@@ -280,6 +283,26 @@ All CSS about is necessary for the carousel to work properly
 
 
 /*End - carousel*/
+
+.call-footer-cont {
+	display: none;
+}
+
+.control-forward {
+	background-image: url(../images/chevron-right.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 75px;
+    width: 75px;
+}
+
+.control-backward {
+	background-image: url(../images/chevron-left.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 75px;
+    width: 75px;
+}
 
 /*End - call to action page*/
 
@@ -603,8 +626,11 @@ strong {
 	/* Begin - Call To Action Page*/
 	.call-timer-img {
 		display: inline-block;
-		margin-top: 2vh;
-		margin-left: 2vw;
+		width: 70px;
+    	margin: 8px;
+    	position: fixed;
+    	z-index: 2;
+    	left: 45vw;
 	}
 
 	.call-btns {
@@ -634,7 +660,7 @@ strong {
 		position: fixed;
 	    bottom: 13vh;
 	    padding: 25px 40px;
-	    left: 35%;
+	    left: 35vw;
 	    background: transparent;
 	    border: 2px solid white;
 	    color: white;
@@ -644,6 +670,23 @@ strong {
 
 	.call-fixbackground-carosoul {
 	    height: 92%;
+	    text-align: unset;
+	}
+
+	.carousel__indicators {
+		left: 44vw;
+	}
+
+	.carousel__controls {
+		margin-top: 40vh;
+	}
+
+	.carousel__slide {
+		height: 66vh;
+	}
+
+	.call-footer-cont {
+		display: block;
 	}
 
 	/* End - Call To Action Page*/
@@ -674,6 +717,23 @@ strong {
 	/* End - Sign In and Up page*/
 
 }	
+
+
+@media only screen and (min-width: 1000px) {
+
+	/*Begin - Call to Action page*/
+	.signUp {
+		left: 37vw;
+	}
+
+	.carousel__slide {
+		height: 61vh;
+	}
+
+
+}
+
+
 
 
 @media only screen and (min-width: 1200px) {
