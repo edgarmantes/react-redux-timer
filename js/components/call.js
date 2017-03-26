@@ -61,7 +61,7 @@ var Call = React.createClass({
 		        	</div>
 	        	
 		        	<ul className="call-footer-cont">
-		        		<li className="call-ftr-list call-edgar-icon"><a href="" target="_blank"><img className="" src=""/>Icon |</a></li>
+		        		<li className="call-ftr-list call-edgar-icon"><a href="" target="_blank"><img className="edgar-icon1" src="../images/edgarEM1.png"/></a></li>
 		        		<li className="call-ftr-list call-ftr-facebook"><a href="" target="_blank"><img className="" src=""/>facebook |</a></li>
 		        		<li className="call-ftr-list call-ftr-github"><a href="" target="_blank"><img className="" src=""/>github |</a></li>
 		        		<li className="call-ftr-list call-ftr-email"><a href="" target="_blank"><img className="" src=""/>email: edgar.mantes11@gmail.com |</a></li>

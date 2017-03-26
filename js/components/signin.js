@@ -5,14 +5,18 @@ var router = require('react-router');
 
 var Link = router.Link;
 
-
+var actions = require('../actions/index')
 var Form = require('./form');
 
 var SignIn = React.createClass({
 	signIn: function(event){
 		event.preventDefault();
-		var username = document.getElementsByClassName('myusername')[0].value;
-		var password = document.getElementsByClassName('mypassword')[0].value;
+		var user = {
+			"username" : document.getElementsByClassName('loginInPut')[0].value,
+			"password" : document.getElementsByClassName('loginInPut')[1].value		
+		}
+		
+		this.props.dispatch(actions.getUser(user));
 	},
 	render: function(props){
 		return (
@@ -29,4 +33,6 @@ var SignIn = React.createClass({
 	}
 })
 
-module.exports = SignIn;
+var Container = connect()(SignIn);
+
+module.exports = Container;

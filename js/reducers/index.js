@@ -21,7 +21,7 @@ var timerReducer = function(state, action){
 		return Object.assign({}, state, { cards: cards })
 		// return state
 
-	} else if ( action.type === actions.CREATE_NEW_CARD ){
+	} else if ( action.type === actions.CREATE_NEW_CARD_SUCCESS ){
 		var newCard = {
 			cardname: action.cardname,
 			time: '00:00:00',
@@ -66,6 +66,9 @@ var timerReducer = function(state, action){
 		localStorage.setItem('TimerProjectArray', JSON.stringify(state.cards))
 
 		return Object.assign({}, state, {cards: state.cards})  // Changes the state on redux
+	} else if (action.type === actions.GET_USER){
+
+		console.log(71, action.user)
 	}
 
 	return state;

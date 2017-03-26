@@ -158,14 +158,16 @@ nav li:last-child a { border-bottom: none; }
 .call-first {
 	height: 100%;
     width: 100%;
+    background-color: #b3e0ff;
 }
 
 .call-fixbackground-carosoul {
 	position: relative;
-	background-color: black;
+	background-color: rgba(0,0,0,0.4);;
 	background-image: url(../images/beach-img.png);
 	background-repeat: no-repeat;
 	background-position: center;
+	background-size: cover;
 	height: 60%;
 	text-align: center;
 }
@@ -250,7 +252,7 @@ nav li:last-child a { border-bottom: none; }
 .carousel__indicators {
 	position: absolute;
     bottom: 0;
-    left: 35%;
+    left: 42vw;
 }
 
 .carousel__indicator {
@@ -288,6 +290,10 @@ All CSS about is necessary for the carousel to work properly
 	display: none;
 }
 
+.call-footer-cont > li > a {
+	color: gray;
+}
+
 .control-forward {
 	background-image: url(../images/chevron-right.png);
 	background-repeat: no-repeat;
@@ -323,6 +329,10 @@ All CSS about is necessary for the carousel to work properly
     right: 0;
     bottom: 0;
     left: 0;
+    background-image: url(../images/office-desk.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .loginInPut {
@@ -630,7 +640,7 @@ strong {
     	margin: 8px;
     	position: fixed;
     	z-index: 2;
-    	left: 45vw;
+    	left: 46vw;
 	}
 
 	.call-btns {
@@ -640,7 +650,7 @@ strong {
 	    left: 0;
 	    right: 0;
 	    height: 90px;
-	    background-color: white;
+	    background-color: #b3e0ff;
 	    margin: 0;
 	}
 
@@ -652,8 +662,10 @@ strong {
 	    border-radius: 10px;
 	    border: none;
 	    background-color: white;
-	    font-size: 25px;
+	    font-size: 20px;
 	    float: right;
+	    background-color: transparent;
+	    color: rgb(255,255,255);
 	}
 
 	.signUp {
@@ -687,6 +699,7 @@ strong {
 
 	.call-footer-cont {
 		display: block;
+		margin-top: 10px;
 	}
 
 	/* End - Call To Action Page*/
@@ -714,6 +727,10 @@ strong {
 		margin-left: 25px;
 
 	}
+
+	.edgar-icon1 {
+		width: 25px;
+	}
 	/* End - Sign In and Up page*/
 
 }	
@@ -739,7 +756,8 @@ strong {
 @media only screen and (min-width: 1200px) {
 	
 	/* Begin - Call To Action Page*/
-	.signUp {
+	.signUp,
+	.signIn {
 	    position: unset;
 	    bottom: unset;
 	    padding: unset;
@@ -780,6 +798,10 @@ strong {
 
 	.call-ftr-list {
     	font-size: 15px;
+	}
+
+	.carousel__indicators {
+	    left: 46vw;
 	}
 
 
