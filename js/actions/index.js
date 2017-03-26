@@ -42,7 +42,9 @@ var createNewCardSuccess = function (data){
 	return {
 		type: 'CREATE_NEW_CARD_SUCCESS',
 		cardname: data.projectName,
-		description: data.description		
+		description: data.description,
+		projectId: data._id,
+		userId: data.userId		
 	}
 }
 
@@ -175,14 +177,66 @@ var createNewCard = function(cardname, description){
 			})
 	}
 
+};
 
 
-	// return {
-	// 	type: CREATE_NEW_CARD,
-	// 	cardname: cardname,
-	// 	description: description
+// Updated and save the Time Change
+var SAVE_TIME_DB = 'SAVE_TIME_DB';
+var saveTimeDB = function(time, projectId){
+	var properties = {
+		time: time,
+		projectId: projectId
+	}
 
-	// }
+	return function(dispatch){
+		return fetch('/time', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json, application/xml, text/plain, text/html, *.*'
+				},
+				body: JSON.stringify(properties)				
+			}).then(function(response){
+				console.log(200, "Save Time DB actions test", response)
+					if (response.status < 200 || response.status >= 300){
+						var error = new Error (response.statusText)
+						error.response = response
+						throw error;
+					}
+				return
+			})
+	}
+};
+
+
+// Delete projects from user profile in db
+var DELETE_PROJECT_DB = 'DELETE_PROJECT_DB';
+var deleteProjectDB = function(projectId, userId){
+	var ids = {
+		projectId: projectId,
+		userId: userId
+	}
+
+	return function(dispatch){
+		return fetch('/project', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json, application/xml, text/plain, text/html, *.*'
+				},
+				body: JSON.stringify(ids)
+
+			}).then(function(response){
+				console.log(230, "delete project db actions test", response)
+					if (response.status < 200 || response.status >= 300){
+						var error = new Error (response.statusText)
+						error.response = response
+						throw error;
+					}
+				return
+			})
+	}
+
 };
 
 
@@ -204,3 +258,9 @@ exports.getMember = getMember;
 
 exports.CREATE_NEW_CARD_SUCCESS = CREATE_NEW_CARD_SUCCESS;
 exports.createNewCardSuccess = createNewCardSuccess;
+
+exports.SAVE_TIME_DB = SAVE_TIME_DB;
+exports.saveTimeDB = saveTimeDB;
+
+exports.DELETE_PROJECT_DB = DELETE_PROJECT_DB;
+exports.deleteProjectDB = deleteProjectDB;

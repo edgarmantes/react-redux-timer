@@ -7,7 +7,7 @@ var Card = function(props){			// Card templete for listing out all cards in the 
 	return (
 		<div className="card">
 			<div className="innercard col-4">
-				<Link to={ '/' + props.index } >  
+				<Link to={ '/home/' + props.index } >  
 					<div className="card-descript">
 						<div className="info info-name"><strong>{props.cardname}</strong></div>
 						<div className="info info-time">{props.time}</div>

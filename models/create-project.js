@@ -5,7 +5,7 @@ var CreateProjectSchema = new mongoose.Schema({
     projectName: { type: String },
     currentTime: { type: String },
     description: { type: String},
-    
+    userId: { type: String }
 });
 
 var CreateProject = mongoose.model('CreateProject', CreateProjectSchema);

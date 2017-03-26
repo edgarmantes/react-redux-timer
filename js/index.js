@@ -29,7 +29,7 @@ var routes = (
 			<Route path="signup" component={SignUp} />
 			<Route path="home" component={Home} >
 				<IndexRoute component={CardsContainer} />
-				<Route path=":cardIndex" component={CardPage} />
+				<Route path="/home/:cardIndex" component={CardPage} />
 			</Route>
 		</Router>
 	</Provider>

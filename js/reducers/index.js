@@ -26,6 +26,8 @@ var timerReducer = function(state, action){
 			cardname: action.cardname,
 			time: '00:00:00',
 			description: action.description,
+			projectId: action.projectId,
+			userId: action.userId,
 			key: null					// this is kept null until cardsArray gets mapped over to pass in each cards current index position and then changes the state with redux
 		};		
 		console.log(26, state, newCard)
@@ -44,6 +46,7 @@ var timerReducer = function(state, action){
 	} else if ( action.type === actions.SAVE_TIME ){
 		var object = state.cards[action.cardIndex];
 		var updateObject = update(object, { time: {$apply: function(){return action.time} }}) // uses 'update' (immutability-helper) to grab the object from the array and change the time after it has been paused
+		
 		state.cards.splice(action.cardIndex, 1, updateObject)			// slice() will remove the object that was updated and inserts the newly updated copy to the current index of that card.
 		localStorage.setItem('TimerProjectArray', JSON.stringify(state.cards))
 		return Object.assign({}, state, {cards: state.cards})			// the 'state.cards' is the value of cards to change the state on redux

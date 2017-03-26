@@ -186,7 +186,7 @@ app.post('/signin', function(req, res){
         }); 
 });
 
-
+// When creating new projects the DB will be updating the CreateProjects document and Users profile projects field
 app.post('/createproject', function(req, res){
     console.log(191, "/createproject test", req.body);
 
@@ -194,12 +194,12 @@ app.post('/createproject', function(req, res){
         projectName : req.body.cardName,
         description : req.body.description,
         currentTime: '00:00:00',
-        userid: req.body.userId
+        userId: req.body.userId
     }
 
 
     CreateProject.create(newProject, function(err, object){
-        console.log(201, err, object)
+        console.log(201, err, object, "newProject", newProject)
         if (err){
             return res.status(500).json({
                 message: 'did not create the project. Internal Server Error'
@@ -208,7 +208,7 @@ app.post('/createproject', function(req, res){
 
 
         User.findOneAndUpdate(
-            {_id: object.userid},
+            {_id: object.userId},
             {$push:{'projects': object._id}}, // pushes newly created objects object._id into users project list
             function(err, user){
                 console.log(214, err, user)
@@ -225,3 +225,41 @@ app.post('/createproject', function(req, res){
     })
 
 });
+
+app.post('/time', function(req, res){
+    console.log(230, "server savetimedb", req.body)
+    CreateProject.findOneAndUpdate(
+        {_id: req.body.projectId},
+        {$set:{'currentTime': req.body.time}}, // Updates the time in DB
+        function(err, project){
+            console.log(214, err, project)
+            if (err) {
+                return res.status(502).json({
+                    message: 'Internal Server Error'
+                })
+            }
+        }
+    )
+    res.status(200).json(req.body)
+})
+
+
+app.post('/project', function(req, res){
+    console.log(248, "server_project delete", req.body)
+
+    User.findOneAndUpdate(
+        {_id: req.body.userId},
+        {$pull:{'projects': req.body.projectId}},
+        function(err, user){
+            console.log(254, err, user)
+            if (err) {
+                return res.status(502).json({
+                    message: 'Internal Server Error'
+                })
+            }            
+        }
+
+    )
+
+    res.status(200).json(req.body)
+})

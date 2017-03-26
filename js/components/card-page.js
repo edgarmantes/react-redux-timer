@@ -67,14 +67,33 @@ var CardPage = React.createClass({
 			this.state.timerActive = false;								// Stops the timer
 			var time = document.getElementById('time').innerHTML;
 			var cardIndex = this.props.params.cardIndex;
+
+			var TimerProjectArray = localStorage.getItem('TimerProjectArray');	// reference index of localstorage array to get projectId for update
+			var parsedArray = JSON.parse(TimerProjectArray);					// " "
+			var projectId = parsedArray[cardIndex].projectId;					// " "
+
+			console.log(71, "time Save test", projectId)
 			this.props.dispatch(actions.saveTime(time, cardIndex));		// Dispatches the saveTime function
-			control.style.backgroundImage = 'url(../images/play.png)'
+			control.style.backgroundImage = 'url(../images/play.png)'	// Changes the button image back to play symbol
+
+
+			this.props.dispatch(actions.saveTimeDB(time, projectId))	// Ajax call to update the time in the db
 		}
 	},
 
 	deleteCard: function(event){
 		event.stopPropagation();
-		this.props.dispatch(actions.deleteCard(this.props.params.cardIndex))	// deletes the card on current card-page
+	// deletes the card on current card-page
+
+		var TimerProjectArray = localStorage.getItem('TimerProjectArray');	// reference index of localstorage array to get projectId for update
+		var parsedArray = JSON.parse(TimerProjectArray);					// " "
+		var projectId = parsedArray[this.props.params.cardIndex].projectId;	
+		var userId = localStorage.userId		
+		console.log(91, "delete test", userId)
+
+		this.props.dispatch(actions.deleteProjectDB(projectId, userId))
+
+		this.props.dispatch(actions.deleteCard(this.props.params.cardIndex))	// Deletes the project in redux store and localStorage
 	},
 
 	render: function(props){
@@ -97,7 +116,7 @@ var CardPage = React.createClass({
 							{time}		
 						</div>
 						<button id="control" onClick={this.changeState}></button>
-						<Link to="/"><button className="delete-btn" onClick={this.deleteCard} ></button></Link>
+						<Link to="/home"><button className="delete-btn" onClick={this.deleteCard} ></button></Link>
 					</div>
 					<div id="descript"><strong className="cPage"></strong>{description}</div>
 					
