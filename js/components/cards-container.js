@@ -33,7 +33,7 @@ var CardsContainer = React.createClass({
 
 		return (
 
-			<div className="cards-list row">
+			<div className="cards-list row cards-row">
 				{cardsArray}
 			</div>
 		)

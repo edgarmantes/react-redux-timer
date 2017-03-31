@@ -38,13 +38,25 @@ var Call = React.createClass({
 							              
 
 							<li className="carousel__slide">
-								<h1>1</h1>
+								<div className="">
+									<img className="" src="" atl=""/>
+									<h2 className=""></h2>
+									<p className=""></p>
+								</div>
 							</li>
 							<li className="carousel__slide">
-								<h1>2</h1>
+								<div className="project-management-slide">
+									<img className="slide-proj-cycle" src="../images/proj-cycle.png" atl="project-management-cycle"/>
+									<h2 className="slide-cycle-desc">Log Your Work Time</h2>
+									<p className="slide-cycle-desc">Time your projects life-cycle from start to finish</p>
+								</div>
 							</li>
 							<li className="carousel__slide">
-								<h1>3</h1>
+								<div className="">
+									<img className="" src="" atl=""/>
+									<h2 className=""></h2>
+									<p className=""></p>
+								</div>
 							</li>
 							              
 
@@ -61,11 +73,11 @@ var Call = React.createClass({
 		        	</div>
 	        	
 		        	<ul className="call-footer-cont">
-		        		<li className="call-ftr-list call-edgar-icon"><a href="" target="_blank"><img className="edgar-icon1" src="../images/edgarEM1.png"/></a></li>
+		        		<li className="call-ftr-list call-edgar-icon"><a href="edgarmantes.tech" target="_blank"><img className="edgar-icon1" src="../images/edgarEM1.png"/></a></li>
 		        		<li className="call-ftr-list call-ftr-facebook"><a href="" target="_blank"><img className="" src=""/>facebook |</a></li>
-		        		<li className="call-ftr-list call-ftr-github"><a href="" target="_blank"><img className="" src=""/>github |</a></li>
-		        		<li className="call-ftr-list call-ftr-email"><a href="" target="_blank"><img className="" src=""/>email: edgar.mantes11@gmail.com |</a></li>
-		        		<li className="call-ftr-list call-ftr-cell"><a href="" target="_blank"><img className="" src=""/>cell: 312-937-1641 |</a></li>
+		        		<li className="call-ftr-list call-ftr-github"><a href="https://github.com/shootermantes" target="_blank"><img className="" src=""/>github |</a></li>
+		        		<li className="call-ftr-list call-ftr-email"><a href="matilto:edgar.mantes11@gmail.com" target="_blank"><img className="" src=""/>email: edgar.mantes11@gmail.com |</a></li>
+		        		<li className="call-ftr-list call-ftr-cell"><a href="tel:312-937-1641" target="_blank"><img className="" src=""/>cell: 312-937-1641 |</a></li>
 		        	</ul>
 		        </div>
 	        </div>

@@ -137,7 +137,7 @@ nav li:last-child a { border-bottom: none; }
 
 
 .info {
-	margin: 5% 0;
+	margin: 4% 0;
 }
 
 .info-name {
@@ -281,6 +281,19 @@ All CSS about is necessary for the carousel to work properly
 	padding: 0; 
 	position: absolute; 
 	width: 1px; 
+}
+
+.slide-proj-cycle {
+	width: 73vw;
+	height: 38vh;
+    padding: 35px 0;
+}
+
+.slide-cycle-desc {
+	color: rgb(255,255,255);
+    font-size: 5.2vw;
+    width: 90%;
+    margin: 0 auto;
 }
 
 
@@ -702,6 +715,22 @@ strong {
 		margin-top: 10px;
 	}
 
+	.slide-proj-cycle {
+		max-width: 500px;
+	}
+
+	.project-management-slide {
+		text-align: center;
+    	margin-top: 100px;
+	}
+
+	.slide-cycle-desc {
+		font-size: 3.2vw;
+		line-height: 1.8;
+	}
+
+
+
 	/* End - Call To Action Page*/
 
 	/* Begin - Sign In and Up page*/
@@ -738,6 +767,10 @@ strong {
 
 @media only screen and (min-width: 1000px) {
 
+	.cards-row {
+		max-width: 1000px;
+	}
+
 	/*Begin - Call to Action page*/
 	.signUp {
 		left: 37vw;
@@ -745,6 +778,10 @@ strong {
 
 	.carousel__slide {
 		height: 61vh;
+	}
+
+	.slide-cycle-desc {
+		font-size: 29px;
 	}
 
 
