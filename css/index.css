@@ -163,8 +163,8 @@ nav li:last-child a { border-bottom: none; }
 
 .call-fixbackground-carosoul {
 	position: relative;
-	background-color: rgba(0,0,0,0.4);;
-	background-image: url(../images/beach-img.png);
+	background-color: rgba(0,0,0,0.8);;
+	background-image: url(../images/officedesk.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -218,17 +218,17 @@ nav li:last-child a { border-bottom: none; }
 /* When radio button is checked the .carousel__slide:nth-of-type will show the current slide selected */
 .carousel__activator:nth-of-type(1):checked ~ .carousel__slide:nth-of-type(1) {
   display: block;
-  animation: showSlide 0.5s;
+  -webkit-animation: sliding 1s;
 }
 
 .carousel__activator:nth-of-type(2):checked ~ .carousel__slide:nth-of-type(2) {
   display: block;
-  animation: showSlide 0.5s;
+  -webkit-animation: sliding 1s;
 }
 
 .carousel__activator:nth-of-type(3):checked ~ .carousel__slide:nth-of-type(3) {
   display: block;
-  animation: showSlide 0.5s;
+  -webkit-animation: sliding 1s;
 }
 
 
@@ -246,7 +246,6 @@ nav li:last-child a { border-bottom: none; }
   	display: none;
     height: 100%;
     width: 100%;
-/*    border: 1px solid black;*/
 }
 
 .carousel__indicators {
@@ -265,6 +264,21 @@ nav li:last-child a { border-bottom: none; }
 
 .carousel__control--forward {
 	float: right;
+}
+
+@-webkit-keyframes sliding {
+	0% {opacity: 0.2;}
+	10% {opacity: 0.4;}
+	20% {opacity: 0.6;}
+	30% {opacity: 0.8;}
+	40% {opacity: 1;}
+	50% {opacity: 1;}
+	60% {opacity: 1;}
+	70% {opacity: 1;}
+	80% {opacity: 1;}
+	90% {opacity: 1;}
+	100% {opacity: 1;}
+
 }
 
 
@@ -287,6 +301,14 @@ All CSS about is necessary for the carousel to work properly
 	width: 73vw;
 	height: 38vh;
     padding: 35px 0;
+}
+
+.slide-stopwatch-img {
+	margin: 70px 0;
+}
+
+.slide-social-img {
+	margin: 12vh;
 }
 
 .slide-cycle-desc {
@@ -371,13 +393,17 @@ All CSS about is necessary for the carousel to work properly
 
 .submit-btn {
 	width: 100%;
-    height: 45px;
+    height: 55px;
     border-radius: 7px;
     border: none;
     color: white;
     font-size: 25px;
-    background-color: lightblue;
+    background-color: rgba(179,224,255,0.9);
     margin: 23px 0;
+}
+
+.submit-btn:hover {
+	background-color: rgba(179,224,255,1.0);
 }
 
 .signin,
@@ -401,6 +427,13 @@ All CSS about is necessary for the carousel to work properly
 	max-width: 80%;
 	font-size: 200%;
 	font-family: 'Lobster', cursive;
+}
+
+.call-header {
+	display: inline-block;
+	width: 250px;
+    font-size: 34px;
+    font-family: 'Lobster', cursive;
 }
 
 body {
@@ -649,11 +682,11 @@ strong {
 	/* Begin - Call To Action Page*/
 	.call-timer-img {
 		display: inline-block;
-		width: 70px;
+		width: 60px;
     	margin: 8px;
-    	position: fixed;
     	z-index: 2;
     	left: 46vw;
+    	vertical-align: middle;
 	}
 
 	.call-btns {
@@ -693,9 +726,12 @@ strong {
 	    border-radius: 15px
 	}
 
+	.sign-switch {
+		color: rgb(0,0,0);
+	}
+
 	.call-fixbackground-carosoul {
 	    height: 92%;
-	    text-align: unset;
 	}
 
 	.carousel__indicators {
@@ -721,7 +757,7 @@ strong {
 
 	.project-management-slide {
 		text-align: center;
-    	margin-top: 100px;
+		margin-top: 2vh;
 	}
 
 	.slide-cycle-desc {
@@ -831,6 +867,13 @@ strong {
 	    padding: 14px 3.2vw;
 	    border-radius: 10px;
 		background-color: transparent;
+	}
+
+	.signUp:hover,
+	.signIn:hover {
+		cursor: pointer;
+		background-color: rgb(255,255,255);
+		color: rgb(0,0,0);
 	}
 
 	.call-ftr-list {

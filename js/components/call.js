@@ -5,7 +5,9 @@ var router = require('react-router');
 var Link = router.Link;
 
 var Call = React.createClass({
-
+	componentWillMount: function(){
+		// document.getElementById("2").checked = true;
+	},
 
 	render: function(props) {
 
@@ -13,7 +15,7 @@ var Call = React.createClass({
 	        <div className="callContainer row">
 	        	<div className="call-first  call-div">
 	        		<div className="call-fixbackground-carosoul">
-	        			<img className="call-timer-img hidden" src="../images/watch.png" />
+	        			<div className="call-header timetracker">Time<img className="call-timer-img hidden" src="../images/watch.png" />Tracker</div>
 	        			<div className="call-carousel-cont">
 
 							<input type="radio" id="1" name="activator" defaultChecked="checked" className="carousel__activator visuallyhidden"/>
@@ -39,23 +41,23 @@ var Call = React.createClass({
 
 							<li className="carousel__slide">
 								<div className="">
-									<img className="" src="" atl=""/>
-									<h2 className=""></h2>
-									<p className=""></p>
+									<img className="slide-stopwatch-img" src="../images/time.png" alt="stopwatch"/>
+									<h2 className="slide-cycle-desc">Productivity</h2>
+									<p className="slide-cycle-desc">See how fast you can finish your project.</p>
 								</div>
 							</li>
 							<li className="carousel__slide">
 								<div className="project-management-slide">
-									<img className="slide-proj-cycle" src="../images/proj-cycle.png" atl="project-management-cycle"/>
+									<img className="slide-proj-cycle" src="../images/proj-cycle.png" alt="project-management-cycle"/>
 									<h2 className="slide-cycle-desc">Log Your Work Time</h2>
 									<p className="slide-cycle-desc">Time your projects life-cycle from start to finish</p>
 								</div>
 							</li>
 							<li className="carousel__slide">
-								<div className="">
-									<img className="" src="" atl=""/>
-									<h2 className=""></h2>
-									<p className=""></p>
+								<div className="slide-social">
+									<img className="slide-social-img" src="../images/social.png" alt="social sharing"/>
+									<h2 className="slide-cycle-desc">Share Your Work</h2>
+									<p className="slide-cycle-desc">Brag about your time in you social network.</p>
 								</div>
 							</li>
 							              

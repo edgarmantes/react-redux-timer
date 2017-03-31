@@ -26,7 +26,7 @@ var SignUp = React.createClass({
 					<img className="signup-img" src="../images/watch.png" />
 					<Form name="signup" username="myusername" password="mypassword" onClick={this.signUp} doThis="Sign Up" />
 					<div className="signup-toSignIn">
-						<Link to="signin"><p>Already have an account? Sign In</p></Link>
+						<Link to="signin"><p className="sign-switch">Already have an account? Sign In</p></Link>
 					</div>
 				</div>
 			</div>
