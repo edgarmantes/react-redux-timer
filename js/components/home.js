@@ -9,7 +9,7 @@ var actions = require('../actions/index');
 
 var Home = React.createClass({
 
-	componentWillMount: function(){
+	componentDidMount: function(){
 
 		var localArray = localStorage.getItem('TimerProjectArray');
 
@@ -34,7 +34,7 @@ var Home = React.createClass({
 				<label htmlFor="menuToggle" className="menu-icon"><img /></label>
 				<header>
 
-					<Link to="/"><div className="timetracker">Time<img  className="clock" src="https://cdn2.iconfinder.com/data/icons/time-and-date-1/48/Clock-128.png" />Tracker</div></Link>
+					<Link to="/home"><div className="timetracker">Time<img  className="clock" src="https://cdn2.iconfinder.com/data/icons/time-and-date-1/48/Clock-128.png" />Tracker</div></Link>
 				</header>
 				<nav className="menu">
 					<h4 className="sidebar-header">New Card Form</h4>
