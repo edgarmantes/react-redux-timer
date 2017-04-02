@@ -70,7 +70,7 @@ var CardPage = React.createClass({
 
 			var TimerProjectArray = localStorage.getItem('TimerProjectArray');	// reference index of localstorage array to get projectId for update
 			var parsedArray = JSON.parse(TimerProjectArray);					// " "
-			var projectId = parsedArray[cardIndex].projectId;					// " "
+			var projectId = parsedArray[cardIndex]._id;					// " "
 
 			console.log(71, "time Save test", projectId)
 			this.props.dispatch(actions.saveTime(time, cardIndex));		// Dispatches the saveTime function
@@ -103,8 +103,8 @@ var CardPage = React.createClass({
 
 		var card = this.state.cards[this.props.params.cardIndex]; 			// The index of the current card on the page is passed in to reference the properties of that object
 		
-		var name = card.cardname;
-		var time = card.time;
+		var name = card.projectName;
+		var time = card.currentTime;
 		var description = card.description;
 
 		return (

@@ -5,7 +5,10 @@ var Card = require('../components/card');
 
 var initialCardState = {
 	cards: [],
-	timerActive: false
+	timerActive: false,
+	username: null,
+	userId: null,
+	projects: null
 };
 
 var timerReducer = function(state, action){
@@ -16,6 +19,7 @@ var timerReducer = function(state, action){
 		if (action.cards === null){
 			cards = []
 		} else {
+			
 			cards = JSON.parse(action.cards);
 		}
 		return Object.assign({}, state, { cards: cards })
@@ -45,7 +49,7 @@ var timerReducer = function(state, action){
 
 	} else if ( action.type === actions.SAVE_TIME ){
 		var object = state.cards[action.cardIndex];
-		var updateObject = update(object, { time: {$apply: function(){return action.time} }}) // uses 'update' (immutability-helper) to grab the object from the array and change the time after it has been paused
+		var updateObject = update(object, { currentTime: {$apply: function(){return action.time} }}) // uses 'update' (immutability-helper) to grab the object from the array and change the time after it has been paused
 		
 		state.cards.splice(action.cardIndex, 1, updateObject)			// slice() will remove the object that was updated and inserts the newly updated copy to the current index of that card.
 		localStorage.setItem('TimerProjectArray', JSON.stringify(state.cards))
@@ -69,9 +73,22 @@ var timerReducer = function(state, action){
 		localStorage.setItem('TimerProjectArray', JSON.stringify(state.cards))
 
 		return Object.assign({}, state, {cards: state.cards})  // Changes the state on redux
-	} else if (action.type === actions.GET_USER){
+	} else if (action.type === actions.GET_USER_SUCCESS){
+		console.log(76,action.userdata.username)
+		var userdata = {
+			username: action.userdata.username,
+			userId: action.userdata._id
+		}
 
-		console.log(71, action.user)
+		localStorage.setItem('username', actions.userdata.username)
+
+		return Object.assign({}, state, userdata)
+		
+	} else if (action.type === actions.GET_CARDS_SUCCESS){
+
+		localStorage.setItem('TimerProjectArray', action.projects)
+		console.log(90, "reducer card success", action.projects)
+		return Object.assign({}, state, { cards: JSON.parse(action.projects) })
 	}
 
 	return state;

@@ -7,15 +7,6 @@ var Route = router.Route;
 var hashHistory = router.hashHistory;
 
 
-// Upon initiate page load, cards will be retrieved
-var GET_CARDS = 'GET_CARDS';
-var getCards = function(cardsArray){
-	return {
-		type: GET_CARDS,
-		cards: cardsArray
-	}
-};
-
 
 // When start/pause button is pressed the time will be saved and stored in store
 var SAVE_TIME = 'SAVE_TIME';
@@ -48,6 +39,23 @@ var createNewCardSuccess = function (data){
 	}
 }
 
+var GET_USER_SUCCESS = 'GET_USER_SUCCESS';
+var getUserSuccess = function(data){
+	console.log(53, "user success", data)
+	return {
+		type: 'GET_USER_SUCCESS',
+		userdata: data
+	}
+};
+
+var GET_CARDS_SUCCESS = 'GET_CARDS_SUCCESS';
+var getCardsSuccess = function(projectsObject){
+	return {
+		type: 'GET_CARDS_SUCCESS',
+		projects: projectsObject
+	}
+};
+
 // Signing in Ajax call
 var GET_USER = 'GET_USER';
 var getUser = function(user){
@@ -72,10 +80,12 @@ var getUser = function(user){
 			
 				return response.text();
 			}).then(function(data){
+				console.log(75, "user data", data)
 				var dataParsed = JSON.parse(data)
 
 				localStorage.setItem('userId', dataParsed._id)
-				localStorage.setItem('TimerProjectArray', dataParsed.projects)
+				localStorage.setItem('username', dataParsed.username)
+				// getCards(dataParsed.projects)
 
 				return dataParsed
 
@@ -83,11 +93,40 @@ var getUser = function(user){
 
 				hashHistory.push('home')
 
-				var localArray = localStorage.getItem('TimerProjectArray');
+				return dispatch(
+					getUserSuccess(data)
+				)
+			})
+	}
+};
+
+// Upon initiate page load, cards will be retrieved
+var GET_CARDS = 'GET_CARDS';
+var getCards = function(username){	
+	var userName = { username: username}
+	
+	return function(dispatch){
+		return fetch('/cards', 
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json, application/xml, text/plain, text/html, *.*'					
+				},
+
+				body: JSON.stringify(userName)
+
+			}).then(function(response){
+				
+				return response.text();
+
+			}).then(function(projectsObject){
+				console.log(116, 'projectsObject', projectsObject)
 
 				return dispatch(
-					getCards(localArray)
+					getCardsSuccess(projectsObject)
 				)
+
 			})
 	}
 };
@@ -264,3 +303,9 @@ exports.saveTimeDB = saveTimeDB;
 
 exports.DELETE_PROJECT_DB = DELETE_PROJECT_DB;
 exports.deleteProjectDB = deleteProjectDB;
+
+exports.GET_USER_SUCCESS = GET_USER_SUCCESS;
+exports.getUserSuccess = getUserSuccess;
+
+exports.GET_CARDS_SUCCESS = GET_CARDS_SUCCESS;
+exports.getCardsSuccess = getCardsSuccess;

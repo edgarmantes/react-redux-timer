@@ -19,6 +19,16 @@ var SignUp = React.createClass({
 		this.props.dispatch(actions.getMember(user))
 
 	},
+
+	demo: function(){
+		var user = {
+			"username" : "demo",
+			"password" : "123"
+		}
+
+		this.props.dispatch(actions.getUser(user));
+	},	
+	
 	render: function(props){
 		return (
 			<div className="signup-container row">
@@ -27,6 +37,7 @@ var SignUp = React.createClass({
 					<Form name="signup" username="myusername" password="mypassword" onClick={this.signUp} doThis="Sign Up" />
 					<div className="signup-toSignIn">
 						<Link to="signin"><p className="sign-switch">Already have an account? Sign In</p></Link>
+						<button className="sign-demo" onClick={this.demo}>Demo</button>
 					</div>
 				</div>
 			</div>

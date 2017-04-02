@@ -226,6 +226,8 @@ app.post('/createproject', function(req, res){
 
 });
 
+
+// Updated the time in the db
 app.post('/time', function(req, res){
     console.log(230, "server savetimedb", req.body)
     CreateProject.findOneAndUpdate(
@@ -238,12 +240,14 @@ app.post('/time', function(req, res){
                     message: 'Internal Server Error'
                 })
             }
+            console.log(243, "server object", project)
+            // res.status(200).json(project)
         }
     )
     res.status(200).json(req.body)
 })
 
-
+// Adds the new projec to the db
 app.post('/project', function(req, res){
     console.log(248, "server_project delete", req.body)
 
@@ -262,4 +266,16 @@ app.post('/project', function(req, res){
     )
 
     res.status(200).json(req.body)
+})
+
+app.post('/cards', function(req, res){
+    console.log(270, 'getCards Test', req.body)
+    var username = String(req.body.username)
+    User.findOne({ username: username})
+        .populate('projects')   // finds the projects object._id and references the createProject model
+        .exec(function(err, data){
+
+            res.status(200).json(data.projects)
+        })
+
 })
