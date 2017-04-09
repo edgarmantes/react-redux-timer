@@ -304,8 +304,22 @@ All CSS about is necessary for the carousel to work properly
 	margin: 100px 0;
 }
 
-.slide-social-img {
+.slide-social {
+	text-align: center;
 	margin: 12vh;
+}
+ 
+.slide-social-img {
+	margin-right: 10px;
+	display: inline-block;
+	margin-bottom: 50px;
+}
+
+.carousel__slide h2 {
+	color: #b3e0ff;
+    font-size: 5.7vw;
+    width: 90%;
+    margin: 0 auto;	
 }
 
 .slide-cycle-desc {

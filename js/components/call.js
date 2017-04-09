@@ -42,22 +42,24 @@ var Call = React.createClass({
 							<li className="carousel__slide">
 								<div className="">
 									<img className="slide-stopwatch-img" src="../images/time.png" alt="stopwatch"/>
-									<h2 className="slide-cycle-desc">Productivity</h2>
+									<h2>Productivity</h2>
 									<p className="slide-cycle-desc">See how fast you can finish your project.</p>
 								</div>
 							</li>
 							<li className="carousel__slide">
 								<div className="project-management-slide">
 									<img className="slide-proj-cycle" src="../images/proj-cycle.png" alt="project-management-cycle"/>
-									<h2 className="slide-cycle-desc">Log Your Work Time</h2>
+									<h2>Log Your Work Time</h2>
 									<p className="slide-cycle-desc">Time your projects life-cycle from start to finish</p>
 								</div>
 							</li>
 							<li className="carousel__slide">
 								<div className="slide-social">
-									<img className="slide-social-img" src="../images/social.png" alt="social sharing"/>
-									<h2 className="slide-cycle-desc">Share Your Work</h2>
-									<p className="slide-cycle-desc">Brag about your time in you social network.</p>
+									<img className="slide-social-img" src="../images/facebook-img.png" alt="social sharing"/>
+									<img className="slide-social-img" src="../images/googleplus-icon.png" alt="social sharing"/>
+									<img className="slide-social-img" src="../images/twitter-img.png" alt="social sharing"/>
+									<h2>Share Your Work</h2>
+									<p className="slide-cycle-desc">Brag about your time in your social network.</p>
 								</div>
 							</li>
 							              
