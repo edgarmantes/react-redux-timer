@@ -72,7 +72,7 @@ var CardPage = React.createClass({
 			var parsedArray = JSON.parse(TimerProjectArray);					// " "
 			var projectId = parsedArray[cardIndex]._id;					// " "
 
-			console.log(71, "time Save test", projectId)
+
 			this.props.dispatch(actions.saveTime(time, cardIndex));		// Dispatches the saveTime function
 			control.style.backgroundImage = 'url(../images/play.png)'	// Changes the button image back to play symbol
 
@@ -89,7 +89,7 @@ var CardPage = React.createClass({
 		var parsedArray = JSON.parse(TimerProjectArray);					// " "
 		var projectId = parsedArray[this.props.params.cardIndex].projectId;	
 		var userId = localStorage.userId		
-		console.log(91, "delete test", userId)
+
 
 		this.props.dispatch(actions.deleteProjectDB(projectId, userId))
 

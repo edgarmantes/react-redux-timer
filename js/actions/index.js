@@ -30,6 +30,7 @@ var deleteCard = function(key){
 // Create New Card Ajax call
 var CREATE_NEW_CARD_SUCCESS = 'CREATE_NEW_CARD_SUCCESS';
 var createNewCardSuccess = function (data){
+
 	return {
 		type: 'CREATE_NEW_CARD_SUCCESS',
 		cardname: data.projectName,
@@ -41,7 +42,7 @@ var createNewCardSuccess = function (data){
 
 var GET_USER_SUCCESS = 'GET_USER_SUCCESS';
 var getUserSuccess = function(data){
-	console.log(53, "user success", data)
+
 	return {
 		type: 'GET_USER_SUCCESS',
 		userdata: data
@@ -80,7 +81,7 @@ var getUser = function(user){
 			
 				return response.text();
 			}).then(function(data){
-				console.log(75, "user data", data)
+
 				var dataParsed = JSON.parse(data)
 
 				localStorage.setItem('userId', dataParsed._id)
@@ -121,7 +122,7 @@ var getCards = function(username){
 				return response.text();
 
 			}).then(function(projectsObject){
-				console.log(116, 'projectsObject', projectsObject)
+
 
 				return dispatch(
 					getCardsSuccess(projectsObject)
@@ -185,7 +186,7 @@ var createNewCard = function(cardname, description){
 	}
 
 	return function(dispatch){
-		return fetch('/createproject', 
+		return fetch('/card', 
 			{
 				method: 'POST',
 				headers: {
@@ -204,7 +205,7 @@ var createNewCard = function(cardname, description){
 				return response.text();
 			}).then(function(data){
 				var dataParsed = JSON.parse(data)
-				console.log(154, "create new project test", dataParsed)
+
 
 				return dataParsed
 			}).then(function(data){
@@ -236,7 +237,7 @@ var saveTimeDB = function(time, projectId){
 				},
 				body: JSON.stringify(properties)				
 			}).then(function(response){
-				console.log(200, "Save Time DB actions test", response)
+
 					if (response.status < 200 || response.status >= 300){
 						var error = new Error (response.statusText)
 						error.response = response
@@ -266,7 +267,7 @@ var deleteProjectDB = function(projectId, userId){
 				body: JSON.stringify(ids)
 
 			}).then(function(response){
-				console.log(230, "delete project db actions test", response)
+
 					if (response.status < 200 || response.status >= 300){
 						var error = new Error (response.statusText)
 						error.response = response

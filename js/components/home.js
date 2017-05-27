@@ -40,8 +40,8 @@ var Home = React.createClass({
 					<h4 className="sidebar-header">New Card Form</h4>
 					<form name="formcreate" className="newform">
 						<label>New Card Name</label><br/>
-						<input className="newcardname" placeholder="New Card Name" type="text" required={true}></input><br/>
-						<label>Description</label><br/>		
+						<input className="newcardname" placeholder="New Card Name" type="text" required={true}></input>
+						<label>Description</label>	
 						<textarea rows="10" cols="28" id="newcarddescription" placeholder="React/Redux/MongoDB... etc." type="text" required={true}/>
 						<input type="submit" className="create-card btn" onClick={this.createCard} value="Create New Card" />
 					</form>

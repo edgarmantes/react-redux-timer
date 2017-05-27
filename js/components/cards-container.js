@@ -22,6 +22,7 @@ var CardsContainer = React.createClass({
 	render: function(props){
 		if (this.props.cards.length !== 0) {
 			var cardsArray = this.props.cards.map(function(object, index){
+
 				return <Card key={index} cardname={object.projectName} time={object.currentTime} description={object.description} index={index} />
 			})
 		} else {

@@ -27,14 +27,15 @@ var timerReducer = function(state, action){
 
 	} else if ( action.type === actions.CREATE_NEW_CARD_SUCCESS ){
 		var newCard = {
-			cardname: action.cardname,
-			time: '00:00:00',
+			projectName: action.cardname,
+			currentTime: '00:00:00',
 			description: action.description,
 			projectId: action.projectId,
 			userId: action.userId,
 			key: null					// this is kept null until cardsArray gets mapped over to pass in each cards current index position and then changes the state with redux
 		};		
-		console.log(26, state, newCard)
+
+
 		var cardsArray = state.cards.concat(newCard);
 		var newArray = cardsArray.map(function(object, index){		// map() used to add the key property of the newCard object in the cardsArray
 			object.key = index;
@@ -43,9 +44,8 @@ var timerReducer = function(state, action){
 
 		// LocalStorage update
 		localStorage.setItem('TimerProjectArray', JSON.stringify(cardsArray))
-		
-		// Redux Store update
-		return Object.assign({}, state, { cards: cardsArray })		// Changes the state with redux
+
+		return Object.assign({}, state, { cards: newArray })		// Changes the state with redux
 
 	} else if ( action.type === actions.SAVE_TIME ){
 		var object = state.cards[action.cardIndex];
@@ -74,20 +74,20 @@ var timerReducer = function(state, action){
 
 		return Object.assign({}, state, {cards: state.cards})  // Changes the state on redux
 	} else if (action.type === actions.GET_USER_SUCCESS){
-		console.log(76,action.userdata.username)
+
 		var userdata = {
 			username: action.userdata.username,
 			userId: action.userdata._id
 		}
 
-		localStorage.setItem('username', actions.userdata.username)
+		localStorage.setItem('username', action.userdata.username)
 
 		return Object.assign({}, state, userdata)
 		
 	} else if (action.type === actions.GET_CARDS_SUCCESS){
 
 		localStorage.setItem('TimerProjectArray', action.projects)
-		console.log(90, "reducer card success", action.projects)
+
 		return Object.assign({}, state, { cards: JSON.parse(action.projects) })
 	}
 

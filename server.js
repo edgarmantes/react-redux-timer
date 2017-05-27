@@ -68,7 +68,6 @@ app.options('*', function(req, res){
 
 // SignUp
 app.post('/signup', function(req, res){
-    console.log(71, "Signup test", req.body)
 
     if (!req.body) {
         return res.status(400).json({
@@ -122,7 +121,6 @@ app.post('/signup', function(req, res){
 
 
     bcrypt.genSalt(10, function(err, salt) {
-        console.log(134, 'test salt', salt)
         if (err) {
             return res.status(500).json({
                 message: 'Internal server error'
@@ -140,7 +138,7 @@ app.post('/signup', function(req, res){
                 username: username,
                 password: hash
             });
-            console.log(151, "peppered pasword and username", user)
+
             user.save(function(err, object) {
 
                 if (err) {
@@ -161,7 +159,7 @@ app.post('/signup', function(req, res){
 
 // SignIn
 app.post('/signin', function(req, res){
-    console.log(164, 'signin test', req.body)
+
         User.findOne({ username: req.body.username }, function (err, user) { // First this searches for an existing username that was provided
             
             if (err) {  // if there was an issue besides 'nonexisting user' the error message will be passed in here. 
@@ -180,15 +178,13 @@ app.post('/signin', function(req, res){
                     return res.status(401).json({ message: 'Incorrect password.' });
                 }
 
-                console.log(187, 'login authenticated')
                 return res.status(200).json(user)
             });
         }); 
 });
 
 // When creating new projects the DB will be updating the CreateProjects document and Users profile projects field
-app.post('/createproject', function(req, res){
-    console.log(191, "/createproject test", req.body);
+app.post('/card', function(req, res){
 
     var newProject = {
         projectName : req.body.cardName,
@@ -199,13 +195,11 @@ app.post('/createproject', function(req, res){
 
 
     CreateProject.create(newProject, function(err, object){
-        console.log(201, err, object, "newProject", newProject)
         if (err){
             return res.status(500).json({
                 message: 'did not create the project. Internal Server Error'
             });
         }
-
 
         User.findOneAndUpdate(
             {_id: object.userId},
@@ -229,38 +223,38 @@ app.post('/createproject', function(req, res){
 
 // Updated the time in the db
 app.post('/time', function(req, res){
-    console.log(230, "server savetimedb", req.body)
+
     CreateProject.findOneAndUpdate(
         {_id: req.body.projectId},
         {$set:{'currentTime': req.body.time}}, // Updates the time in DB
         function(err, project){
-            console.log(214, err, project)
+
             if (err) {
                 return res.status(502).json({
                     message: 'Internal Server Error'
                 })
             }
-            console.log(243, "server object", project)
-            // res.status(200).json(project)
+
         }
     )
     res.status(200).json(req.body)
 })
 
-// Adds the new projec to the db
+// Deletes the new projec to the db
 app.post('/project', function(req, res){
-    console.log(248, "server_project delete", req.body)
+
 
     User.findOneAndUpdate(
         {_id: req.body.userId},
         {$pull:{'projects': req.body.projectId}},
         function(err, user){
-            console.log(254, err, user)
+
             if (err) {
                 return res.status(502).json({
                     message: 'Internal Server Error'
                 })
-            }            
+            }   
+         
         }
 
     )
@@ -269,7 +263,7 @@ app.post('/project', function(req, res){
 })
 
 app.post('/cards', function(req, res){
-    console.log(270, 'getCards Test', req.body)
+
     var username = String(req.body.username)
     User.findOne({ username: username})
         .populate('projects')   // finds the projects object._id and references the createProject model
@@ -279,3 +273,6 @@ app.post('/cards', function(req, res){
         })
 
 })
+
+
+//  Delete and update database

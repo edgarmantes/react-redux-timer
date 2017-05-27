@@ -356,6 +356,10 @@ All CSS about is necessary for the carousel to work properly
     width: 75px;
 }
 
+.control-backward:hover, .control-forward:hover {
+	cursor: pointer;
+}
+
 /*End - call to action page*/
 
 /* Begin - Sign In / Up page */
@@ -411,6 +415,7 @@ All CSS about is necessary for the carousel to work properly
     font-size: 25px;
     background-color: rgba(179,224,255,0.9);
     margin: 23px 0;
+    cursor: pointer;
 }
 
 .submit-btn:hover {
@@ -428,6 +433,10 @@ All CSS about is necessary for the carousel to work properly
     margin: 20px;
     color: blue;
     font-size: 1.2em;
+}
+
+.sign-demo:hover {
+	cursor: pointer;
 }
 
 /* End - Sign In / Up page */
