@@ -356,7 +356,7 @@ All CSS about is necessary for the carousel to work properly
     width: 75px;
 }
 
-.control-backward: hover, .control-forward:hover {
+.control-backward:hover, .control-forward:hover {
 	cursor: pointer;
 }
 
