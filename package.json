@@ -4,7 +4,7 @@
   "description": "Tracking your length of time on a project",
   "main": "js/index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "http-server -c-1 public",
     "dev": "run-p watch serve",
     "test": "mocha --recursive --compilers js:babel-core/register",
     "build": "run-s build:*",

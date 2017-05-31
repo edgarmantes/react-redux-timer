@@ -234,7 +234,7 @@ nav li:last-child a { border-bottom: none; }
   	display: none;
     position: absolute;
     width: 100%;
-    margin-top: 50%;
+    margin-top: 19vh;
     z-index: 2;
 }
 
@@ -248,7 +248,8 @@ nav li:last-child a { border-bottom: none; }
 .carousel__indicators {
 	position: absolute;
     bottom: 0;
-    left: 42vw;
+    left: 34%;
+    padding-bottom: 10px;
 }
 
 .carousel__indicator {
@@ -295,13 +296,17 @@ All CSS about is necessary for the carousel to work properly
 }
 
 .slide-proj-cycle {
-	width: 73vw;
-	height: 38vh;
-    padding: 35px 0;
+	width: 200px;
+    padding: 22px 0;
 }
 
 .slide-stopwatch-img {
-	margin: 100px 0;
+	margin: 25px 0;
+	width: 180px;
+}
+
+.slide-time {
+	margin-top: 60px;
 }
 
 .slide-social {
@@ -312,20 +317,21 @@ All CSS about is necessary for the carousel to work properly
 .slide-social-img {
 	margin-right: 10px;
 	display: inline-block;
-	margin-bottom: 50px;
+	margin-bottom: 32px;
+	width: 55px;
 }
 
 .carousel__slide h2 {
 	color: #b3e0ff;
-    font-size: 5.7vw;
-    width: 90%;
+    font-size: 24px;
+    width: 200px;
     margin: 0 auto;	
 }
 
 .slide-cycle-desc {
 	color: rgb(255,255,255);
-    font-size: 5.2vw;
-    width: 90%;
+    font-size: 19px;
+    width: 200px;
     margin: 0 auto;
 }
 
@@ -345,7 +351,7 @@ All CSS about is necessary for the carousel to work properly
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 75px;
-    width: 75px;
+    width: 50px;
 }
 
 .control-backward {
@@ -353,7 +359,7 @@ All CSS about is necessary for the carousel to work properly
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 75px;
-    width: 75px;
+    width: 50px;
 }
 
 .control-backward:hover, .control-forward:hover {
@@ -785,6 +791,7 @@ strong {
 
 	.carousel__slide {
 		height: 66vh;
+		font-size: 40px;
 	}
 
 	.call-footer-cont {
@@ -792,13 +799,41 @@ strong {
 		margin-top: 10px;
 	}
 
+	.project-management-slide > h2 {
+		font-size: 40px;
+		width: 400px;
+	}
+
+	.project-management-slide > p {
+		width: 400px;
+		font-size: 32px;
+	}
+
 	.slide-proj-cycle {
-		max-width: 500px;
+		width: 345px;
+	}
+
+	.slide-stopwatch-img {
+		width: 290px;
+	}
+
+	.slide-time {
+		margin-top: 19vh;
+	}
+
+	.slide-time > h2 {
+		width: 400px;
+    	font-size: 40px;
+	}
+
+	.slide-time > p {
+		width: 400px;
+    	font-size: 30px;
 	}
 
 	.project-management-slide {
 		text-align: center;
-		margin-top: 2vh;
+		margin-top: 11vh;
 	}
 
 	.slide-cycle-desc {
@@ -806,7 +841,25 @@ strong {
 		line-height: 1.8;
 	}
 
+	.slide-social-img {
+    	margin-right: 20px;
+    	width: 100px;
+	}
 
+	.slide-social {
+		margin: 0;
+    	margin-top: 19vh;
+	}
+
+	.slide-social > h2 {
+		font-size: 40px;
+		width: 400px;
+	}
+
+	.slide-social > p {
+		font-size: 30px;
+		width: 400px;
+	}
 
 	/* End - Call To Action Page*/
 
@@ -871,6 +924,11 @@ strong {
 		margin: 9px 0;
 	}
 
+	.project-management-slide > p {
+	    width: 550px;
+	    font-size: 26px;
+	}
+
 
 }
 
@@ -929,5 +987,46 @@ strong {
 	    left: 46vw;
 	}
 
+	.slide-stopwatch-img {
+		width: 470px;
+	}
+
+	.slide-time > h2 {
+		font-size: 70px;
+		width: 600px;
+	}
+
+	.slide-time > p {
+		width: 600px;
+    	font-size: 40px;
+	}
+
+	.slide-proj-cycle {
+		width: 500px;
+	}
+
+	.project-management-slide > h2 {
+		font-size: 49px;
+		width: 500px;
+	}
+
+	.project-management-slide > p {
+		width: 550px;
+		font-size: 40px;
+	}
+
+	.slide-social-img {
+		width: 125px;
+	}
+
+	.slide-social > h2 {
+	    font-size: 50px;
+	    width: 600px;
+	}
+
+	.slide-social > p {
+    	font-size: 40px;
+    	width: 600px;
+	}
 
 }

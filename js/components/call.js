@@ -40,7 +40,7 @@ var Call = React.createClass({
 							              
 
 							<li className="carousel__slide">
-								<div className="">
+								<div className="slide-time">
 									<img className="slide-stopwatch-img" src="../images/time.png" alt="stopwatch"/>
 									<h2>Productivity</h2>
 									<p className="slide-cycle-desc">See how fast you can finish your project.</p>
