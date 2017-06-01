@@ -205,7 +205,7 @@ app.post('/card', function(req, res){
             {_id: object.userId},
             {$push:{'projects': object._id}}, // pushes newly created objects object._id into users project list
             function(err, user){
-                console.log(214, err, user)
+
                 if (err) {
                     return res.status(502).json({
                         message: 'Internal Server Error'

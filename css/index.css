@@ -169,9 +169,7 @@ nav li:last-child a { border-bottom: none; }
 	text-align: center;
 }
 
-.call-btns {
-	margin: 8% 0;
-}
+
 
 .signIn,
 .signUp {
@@ -297,7 +295,7 @@ All CSS about is necessary for the carousel to work properly
 
 .slide-proj-cycle {
 	width: 200px;
-    padding: 22px 0;
+    padding: 10px 0;
 }
 
 .slide-stopwatch-img {
@@ -323,8 +321,8 @@ All CSS about is necessary for the carousel to work properly
 
 .carousel__slide h2 {
 	color: #b3e0ff;
-    font-size: 24px;
-    width: 200px;
+    font-size: 22px;
+    width: 215px;
     margin: 0 auto;	
 }
 
@@ -372,7 +370,7 @@ All CSS about is necessary for the carousel to work properly
 
 .signin-cont,
 .signup-cont {
-	margin: 16vh auto;
+	margin: 6vh auto;
 	max-width: 550px;
 	float: unset;
 }
@@ -381,9 +379,9 @@ All CSS about is necessary for the carousel to work properly
 .signin-container {
 	text-align: center;
 	position: absolute;
+	height: 100%;
     top: 0;
     right: 0;
-    bottom: 0;
     left: 0;
     background-image: url(../images/office-desk.png);
     background-repeat: no-repeat;
@@ -453,15 +451,15 @@ All CSS about is necessary for the carousel to work properly
 }
 
 .clock {
-	max-height: 50px;
+	max-height: 39px;
 	vertical-align: middle;
-    margin: 3px;
+    margin: 9px 3px;
 }
 
 .timetracker {
 	display: inline-block;
 	max-width: 80%;
-	font-size: 200%;
+	font-size: 20px;
 	font-family: 'Lobster', cursive;
 }
 
@@ -525,15 +523,20 @@ label {
 
 .home-username {
 	display: inline-block;
-    margin-top: 19px;
+    margin-top: 36px;
     position: absolute;
-    right: 25px;
+    right: 10px;
+    font-size: 10px;
 }
 
 .create-card {
 	font-size: 30px;
 	background-color: #f0eadb;
 	margin-bottom: 15px;	
+}
+
+#newcarddescription {
+	max-width: 100%;
 }
 
 div.makeNewCard > p {
@@ -556,7 +559,7 @@ strong {
 }
 
 #time {
-	display: inline-block;
+	display: block;
 	font-size: 430%;
 	text-align: center;
 	color: #ff0000;
@@ -566,6 +569,10 @@ strong {
 #descript {
 	font-size: 30px;
 	word-wrap: break-word;
+}
+
+.info-desc {
+	word-break: break-all;
 }
 
 .cPage {
@@ -714,8 +721,11 @@ strong {
 
 
 /*iPhone 6 Landscape*/
-@media only screen and (min-width: 600px) {
-
+@media only screen and (min-width: 560px) {
+	#time {
+		display: inline-block;
+		font-size: 75px;
+	}
 
 
 
@@ -1029,4 +1039,19 @@ strong {
     	width: 600px;
 	}
 
+
+
+	/*Card*/
+	.timetracker {
+		font-size: 30px;
+	}
+
+	.clock {
+		max-height: 52px;
+		margin: 3px 3px;
+	}
+
+	.home-username {
+		font-size: 14px;
+	}
 }
