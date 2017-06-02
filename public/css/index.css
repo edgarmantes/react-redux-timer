@@ -61,7 +61,7 @@ nav li:last-child a { border-bottom: none; }
 	cursor: pointer;
 	font-size: 18px;
 	border-radius: 5px;
-	position: fixed;
+	position: absolute;
 	top: 3px;
 	left: 5px;
 
@@ -139,6 +139,7 @@ nav li:last-child a { border-bottom: none; }
 
 .info-name {
 	font-size: 35px;
+	font-family: 'Raleway', sans-serif;
 }
 
 /* Begin - Call to Action Page styling*/
@@ -169,7 +170,10 @@ nav li:last-child a { border-bottom: none; }
 	text-align: center;
 }
 
-
+.call-carousel-cont {
+	height: 89%;
+	display: flex;
+}
 
 .signIn,
 .signUp {
@@ -181,6 +185,7 @@ nav li:last-child a { border-bottom: none; }
     border: 2px solid black;
     background-color: white;
     font-size: 6vw;
+    font-family: 'Raleway', sans-serif;
 }
 
 /*Begin - carosoul*/
@@ -244,10 +249,11 @@ nav li:last-child a { border-bottom: none; }
 }
 
 .carousel__indicators {
-	position: absolute;
     bottom: 0;
-    left: 34%;
     padding-bottom: 10px;
+    width: 114px;
+    margin: 0 auto;
+    align-self: flex-end;
 }
 
 .carousel__indicator {
@@ -296,6 +302,8 @@ All CSS about is necessary for the carousel to work properly
 .slide-proj-cycle {
 	width: 200px;
     padding: 10px 0;
+    padding-top: 30px;
+
 }
 
 .slide-stopwatch-img {
@@ -307,9 +315,17 @@ All CSS about is necessary for the carousel to work properly
 	margin-top: 60px;
 }
 
+.slide-time > h2, p {
+	font-family: 'Raleway', sans-serif;
+}
+
 .slide-social {
 	text-align: center;
 	margin: 12vh;
+}
+
+.slide-social > h2 {
+	font-family: 'Raleway', sans-serif;
 }
  
 .slide-social-img {
@@ -331,6 +347,10 @@ All CSS about is necessary for the carousel to work properly
     font-size: 19px;
     width: 200px;
     margin: 0 auto;
+}
+
+.project-management-slide > h2, p {
+	font-family: 'Raleway', sans-serif;
 }
 
 
@@ -395,6 +415,7 @@ All CSS about is necessary for the carousel to work properly
     padding: 0 20px;
     background-color: transparent;
     border: none;
+    font-family: 'Raleway', sans-serif;
 }
 
 .input-container {
@@ -417,6 +438,7 @@ All CSS about is necessary for the carousel to work properly
     border: none;
     color: white;
     font-size: 25px;
+    font-family: 'Raleway', sans-serif;
     background-color: rgba(179,224,255,0.9);
     margin: 23px 0;
     cursor: pointer;
@@ -437,6 +459,7 @@ All CSS about is necessary for the carousel to work properly
     margin: 20px;
     color: blue;
     font-size: 1.2em;
+    font-family: 'Raleway', sans-serif;
 }
 
 .sign-demo:hover {
@@ -482,7 +505,7 @@ body {
 
 label {
 	margin: 5px;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	float: left;
 	font-size: 20px;
 }
@@ -491,6 +514,7 @@ label {
 	float: left;
 	width: 100%;
 	height: 30px;
+	font-family: 'Raleway', sans-serif;
 }
 
 .newform {
@@ -506,7 +530,7 @@ label {
 	height: 50px;
 	border: none;
 	background-color: #E5DAC0;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
 }
 
@@ -527,16 +551,18 @@ label {
     position: absolute;
     right: 10px;
     font-size: 10px;
+    font-family: 'Raleway', sans-serif;
 }
 
 .create-card {
-	font-size: 30px;
+	font-size: 21px;
 	background-color: #f0eadb;
 	margin-bottom: 15px;	
 }
 
 #newcarddescription {
 	max-width: 100%;
+	font-family: 'Raleway', sans-serif;
 }
 
 div.makeNewCard > p {
@@ -550,7 +576,7 @@ div.makeNewCard > p {
 }
 
 strong {
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: 'Raleway', sans-serif;
 }
 
 .page {
@@ -564,15 +590,22 @@ strong {
 	text-align: center;
 	color: #ff0000;
 	font-size: 9vh;
+	font-family: 'Raleway', sans-serif;
 }
 
 #descript {
 	font-size: 30px;
 	word-wrap: break-word;
+	font-family: 'Raleway', sans-serif;
 }
 
 .info-desc {
 	word-break: break-all;
+	font-family: 'Raleway', sans-serif;
+}
+
+.info-time {
+	font-family: 'Raleway', sans-serif;
 }
 
 .cPage {
@@ -592,6 +625,7 @@ strong {
 #cardName {
 	margin: 50px 0;
 	font-size: 50px;
+	font-family: 'Raleway', sans-serif;
 }
 
 .fb {
@@ -774,7 +808,7 @@ strong {
 	.signUp {
 		position: fixed;
 	    bottom: 13vh;
-	    padding: 25px 40px;
+	    padding: 9px 29px;
 	    left: 35vw;
 	    background: transparent;
 	    border: 2px solid white;
@@ -838,7 +872,7 @@ strong {
 
 	.slide-time > p {
 		width: 400px;
-    	font-size: 30px;
+    	font-size: 24px;
 	}
 
 	.project-management-slide {
@@ -1002,17 +1036,17 @@ strong {
 	}
 
 	.slide-time > h2 {
-		font-size: 70px;
+		font-size: 55px;
 		width: 600px;
 	}
 
 	.slide-time > p {
 		width: 600px;
-    	font-size: 40px;
+    	font-size: 31px;
 	}
 
 	.slide-proj-cycle {
-		width: 500px;
+		/*width: 500px;*/
 	}
 
 	.project-management-slide > h2 {
@@ -1022,11 +1056,11 @@ strong {
 
 	.project-management-slide > p {
 		width: 550px;
-		font-size: 40px;
+		font-size: 31px;
 	}
 
 	.slide-social-img {
-		width: 125px;
+		width: 90px;
 	}
 
 	.slide-social > h2 {
@@ -1035,7 +1069,7 @@ strong {
 	}
 
 	.slide-social > p {
-    	font-size: 40px;
+    	font-size: 31px;
     	width: 600px;
 	}
 

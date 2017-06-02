@@ -31,8 +31,9 @@ var Home = React.createClass({
 		return (
 			<div className="navigation">
 				<input type="checkbox" id="menuToggle" />
-				<label htmlFor="menuToggle" className="menu-icon"><img /></label>
+				
 				<header>
+					<label htmlFor="menuToggle" className="menu-icon"><img /></label>
 					<Link to="/home"><div className="timetracker">Time<img  className="clock" src="../images/watch.png" />Tracker</div></Link>
 					<p className="home-username">Welcome: {username}</p>
 				</header>
